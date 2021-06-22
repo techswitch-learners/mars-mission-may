@@ -7,7 +7,7 @@ import { Home } from './components/Home';
 function App() {
 
     return (
-        <Router forceRefresh={true}>
+        <Router>
             <NavBar />
             <div>Replace with component for weather bar</div>
             <Switch>
