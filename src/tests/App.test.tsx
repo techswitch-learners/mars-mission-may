@@ -7,7 +7,7 @@ test('renders landing/home page', () => {
     const navbarElement = screen.getByText("Replace with component for navbar");
     const weatherBarElement = screen.getByText("Replace with component for weather bar");
     const landingPageElement = screen.getByText("Replace with component for landing page");
-    const footerElement = screen.getByText("Replace with component for footer");
+    const footerElement = screen.getByTestId("footer")
 
     expect(navbarElement).toBeInTheDocument();
     expect(weatherBarElement).toBeInTheDocument();
