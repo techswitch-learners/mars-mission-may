@@ -1,15 +1,19 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from 'react';
 import './App.scss';
 import { Footer } from "./components/Footer"
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { NavBar } from './components/NavBar';
+import { Home } from './components/Home';
 
 function App() {
+
     return (
-        <Router forceRefresh={true}>
-            <div>Replace with component for navbar</div>
+        <Router>
+            <NavBar />
             <div>Replace with component for weather bar</div>
             <Switch>
                 <Route exact path="/">
-                    <div>Replace with component for landing page</div>
+                    <Home />
                 </Route>
                 <Route exact path="/timeline">
                     <div>Replace with component for timeline page</div>
