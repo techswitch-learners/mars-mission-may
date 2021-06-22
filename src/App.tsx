@@ -8,7 +8,7 @@ import { Card } from './components/Card';
 function App() {
 
     return (
-        <Router forceRefresh={true}>
+        <Router>
             <NavBar />
             <div>Replace with component for weather bar</div>
             <Switch>
