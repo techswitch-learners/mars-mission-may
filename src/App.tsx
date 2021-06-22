@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
+import { Home } from './components/Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
     return (
@@ -8,7 +8,7 @@ function App() {
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <h2>
-                    Hello how are you?
+                    Hello World!
                 </h2>
             </header>
         </div>
@@ -16,3 +16,4 @@ function App() {
 }
 
 export default App;
+
