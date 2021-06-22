@@ -7,7 +7,7 @@ test('renders NASA logo in footer', () => {
     const nasaLogo = screen.getByTestId('nasa-logo');
 
     expect(nasaLogo).toBeInTheDocument();
-    expect(nasaLogo.src === "https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png");
+    expect(nasaLogo.src === "https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png").toBeTruthy();
 });
 
 test('renders TechSwitch logo in footer', () => {
@@ -16,5 +16,5 @@ test('renders TechSwitch logo in footer', () => {
     const techSwitchLogo = screen.getByTestId('techswitch-logo');
 
     expect(techSwitchLogo).toBeInTheDocument();
-    expect(techSwitchLogo.src === "https://www.techswitch.co.uk/images/logo.svg");
+    expect(techSwitchLogo.src === "https://www.techswitch.co.uk/images/logo.svg").toBeTruthy();
 });
