@@ -11,7 +11,7 @@ test('renders navbar', () => {
     const opportunity = screen.getByText("Opportunity");
     const spirit = screen.getByText("Spirit");
     const timeline = screen.getByText("Timeline");
-    
+
     expect(home).toBeInTheDocument();
     expect(curiosity).toBeInTheDocument();
     expect(opportunity).toBeInTheDocument();
