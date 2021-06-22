@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.scss';
 import { Home } from './components/Home';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
     return (
@@ -10,7 +9,7 @@ function App() {
             <div>Replace with component for weather bar</div>
             <Switch>
                 <Route exact path="/">
-                    <div>Replace with component for landing page</div>
+                    <Home />
                 </Route>
                 <Route exact path="/timeline">
                     <div>Replace with component for timeline page</div>
