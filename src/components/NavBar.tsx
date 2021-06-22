@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-function NavBar() {
+export function NavBar() {
     return (
-
         <div className='nav-bar'>
             <Link to='/'> Home </Link>
             <Link to='/spirit' >Spirit </Link>
@@ -13,7 +11,4 @@ function NavBar() {
             <Link to='/timeline'> Timeline</Link>
         </div>
     )
-
 }
-export {NavBar};
-
