@@ -1,11 +1,14 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from 'react';
 import './App.scss';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { NavBar } from './components/NavBar';
 import { Home } from './components/Home';
 
 function App() {
+
     return (
         <Router forceRefresh={true}>
-            <div>Replace with component for navbar</div>
+            <NavBar />
             <div>Replace with component for weather bar</div>
             <Switch>
                 <Route exact path="/">
@@ -30,4 +33,3 @@ function App() {
 }
 
 export default App;
-
