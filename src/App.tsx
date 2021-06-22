@@ -16,7 +16,7 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/timeline">
-                    <Card imageSrc="https://picsum.photos/id/237/200/300" title="TestCardTitle" body="body-text-body-text-body-text-body-text-body-text-" href="https://reactjs.org/docs/components-and-props.html" justificationRight={false} />
+                    <Card imageSrc="https://picsum.photos/id/237/200/300" title="TestCardTitle" body="body-text-body-text-body-text-body-text-body-text-body-text-body-text-" href="https://reactjs.org/docs/components-and-props.html" justificationRight={false} hideText={false} />
                     <div>Replace with component for timeline page</div>
                 </Route>
                 <Route exact path="/:rover">
