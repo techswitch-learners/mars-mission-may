@@ -1,0 +1,14 @@
+@import './constants.scss';
+
+
+#card-object {
+    background-color: $secondaryLight;
+}
+
+.card-title {
+    background-color: $primaryColor;
+}
+
+.card-body {
+    background-color: $primaryLight;
+}

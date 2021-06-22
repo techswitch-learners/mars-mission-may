@@ -3,6 +3,7 @@ import './App.scss';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { NavBar } from './components/NavBar';
 import { Home } from './components/Home';
+import { Card } from './components/Card';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/timeline">
+                    <Card imageSrc="https://picsum.photos/id/237/200/300" title="TestCardTitle" body="body-text-body-text-body-text-body-text-body-text-" href="https://reactjs.org/docs/components-and-props.html" justificationRight={false} />
                     <div>Replace with component for timeline page</div>
                 </Route>
                 <Route exact path="/:rover">
