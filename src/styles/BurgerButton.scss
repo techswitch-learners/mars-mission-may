@@ -53,4 +53,16 @@
     .nav-bar {
       display: none;
     }
+    .nav-bar-mobile {
+      width: 200px;
+      position: absolute;
+      z-index: 3;
+      background-color: $secondaryDark;
+    }
+
+    .nav-bar-mobile a {
+      display: block;
+      padding: 12px;
+     
+    }
   }
