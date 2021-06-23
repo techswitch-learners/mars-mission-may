@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import '../styles/BurgerButton.scss'
 import { useState } from 'react';
+import '../styles/NavBar.scss';
+
 
 export function NavBar() {
     const [closeBurger, setBurgerState] = useState(true);
