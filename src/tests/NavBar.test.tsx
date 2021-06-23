@@ -1,6 +1,7 @@
-import { render, screen } from '@testing-library/react';
-import App from '../App';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from "@testing-library/react";
+import App from "../App";
+import userEvent from "@testing-library/user-event";
+import React from "react";
 
 test("renders navbar", () => {
     render(<App />);
@@ -17,14 +18,14 @@ test("renders navbar", () => {
     expect(timeline).toBeInTheDocument();
 });
 
-test('burger button exists', () => {
+test("burger button exists", () => {
     render(<App />);
     const burgerButton = screen.getByTestId("burger-test");
 
     expect(burgerButton).toBeInTheDocument();
 });
 
-test('burger button click changes testId of bars', () => {
+test("burger button click changes testId of bars", () => {
     render(<App />);
     const burgerButton = screen.getByTestId("burger-test");
     userEvent.click(burgerButton); 
