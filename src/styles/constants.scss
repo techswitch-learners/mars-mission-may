@@ -8,6 +8,7 @@ $secondaryLight: #efefef;
 $secondaryDark: #8d8d8d;
 $primaryText: #ffffff;
 $secondaryText: #000000;
+
 $fontFamily: 'IBM Plex Mono', monospace;
 $titleFontSize: 32px;
 $subtitleFontSize: 24px;
@@ -15,6 +16,8 @@ $bodyFontSize: 16px;
 $mobileTitleFontSize: 24px;
 $mobileSubtitleFontSize: 20px;
 $mobileBodyFontSize: 14px;
+
+$bodyWidth: 1024px;
 $activeImageBorder: 10px solid $primaryColor;
 $cardBoxShadow: 10px 10px $primaryDark;
 $titleLineHeight: 40px;
@@ -23,9 +26,13 @@ $bodyLineHeight: 24px;
 $mobileTitleLineHeight: 32px;
 $mobileSubtitleLineHeight: 24px;
 $mobileBodyLineHeight: 20px;
+
 $gutters: 48px;
 $mobileGutters: 24px;
 $cardPadding: 24px;
 $mobileCardPadding: 16px;
+
+$mobileScreenSize: 445px;
 $desktopContentWidth:760px;
 $timelineCardWidth:500px;
+

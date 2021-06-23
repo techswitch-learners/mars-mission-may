@@ -1,12 +1,15 @@
-import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Footer } from "./components/Footer"
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { NavBar } from './components/NavBar';
 import { Home } from './components/Home';
+
+
+import { Rover } from './components/Rover';
+import { Timeline } from './components/Timeline';
 import { Card } from './components/Card';
 
 function App() {
-
     return (
         <Router>
             <NavBar />
@@ -16,13 +19,12 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/timeline">
-                    {/* <Card imageSrc="https://picsum.photos/id/237/200/300" title="TestCardTitle" body="body-text-body-text-body-text-body-text-body-text-body-text-body-text-" href="" showInitialText={true} textHideable={true} imageOnRight={false} isTimelineCard={true} />
-                    <Card imageSrc="https://picsum.photos/id/237/200/300" title="TestCardTitle" body="body-text-body-text-body-text-body-text-body-text-body-text-body-text-" href="/opportunity" showInitialText={true} textHideable={true} imageOnRight={true} isTimelineCard={true} />
-                    <Card imageSrc="https://picsum.photos/id/237/200/300" title="TestCardTitle" body="body-text-body-text-body-text-body-text-body-text-body-text-body-text-" href="/curiosity" showInitialText={true} textHideable={true} imageOnRight={false} isTimelineCard={true} /> */}
-                    <div>Replace with component for timeline page</div>
+
+                    <Timeline />
+
                 </Route>
                 <Route exact path="/:rover">
-                    <div>Replace with component for rover page. :rover is a variable name either spirit, opportunity or curiosity. The component should load each page based off of the rover name.</div>
+                    <Rover />
                 </Route>
                 <Route exact path="/:rover/:photoId">
                     <div>Replace with component for photoId with the user selected photo, use the unique Id for each image from the api to replace the main content</div>
@@ -31,7 +33,7 @@ function App() {
                     <div>Sorry path not found</div>
                 </Route>
             </Switch>
-            <div>Replace with component for footer</div>
+            <Footer />
         </Router>
     );
 }
