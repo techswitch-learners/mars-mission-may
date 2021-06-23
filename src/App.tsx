@@ -1,9 +1,10 @@
-import './App.scss';
-import { Footer } from "./components/Footer"
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { NavBar } from './components/NavBar';
-import { Home } from './components/Home';
-import { Rover } from './components/Rover';
+import "./App.scss";
+import { Footer } from "./components/Footer";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { NavBar } from "./components/NavBar";
+import { Home } from "./components/Home";
+import { Rover } from "./components/Rover";
+import React from "react";
 
 function App() {
     return (
