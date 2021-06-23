@@ -11,7 +11,7 @@ export function Rover() {
 
     return (
         <div>
-            {(rover.match(RegexMatch)) ? <h2>Hello {rover}</h2> : <Redirect to="/" />}
+            {(!rover.match(RegexMatch)) ? <Redirect to="/" /> :<h2>Hello {rover}</h2> }
         </div>
     )
 }
