@@ -7,29 +7,37 @@ export interface CardProps {
     href: string;
     title: string;
     body: string;
-    hideText: boolean;
-    imageOnRight:boolean;
-    isTimelineCard:boolean;
-    cardJustificationRight: boolean;
+    showInitialText: boolean;
+    textHideable: boolean;
+    imageOnRight: boolean;
+    isTimelineCard: boolean;
 }
 
-export function Card({ imageSrc, href, title, body, hideText, imageOnRight, isTimelineCard ,cardJustificationRight }: CardProps) {
+export function Card({ imageSrc, href, title, body, showInitialText, textHideable, imageOnRight, isTimelineCard }: CardProps) {
 
-    const [toggleText, setToggleText] = useState(true);
+    const [textVisible, setTextVisible] = useState(showInitialText);
+
+    function changeToggleText(){
+        if(textHideable){
+            setTextVisible(!textVisible);
+        }  
+    }
 
     const cardContent = (
-        <div>
-            <img className="card card-image" src={imageSrc} />
-            <div className="card-text-block">
-                <h1 className="card card-title">{title}</h1>
-                <p className="card card-body">{body}</p>
-            </div>
-        </div>)
+        <div className={`card-link card-image-on-${imageOnRight ? "right" : "left"}`}>
+            <img className="card card-image" src={imageSrc} onClick={changeToggleText} />
+            { textVisible && 
+                <div className="card-text-block">
+                    <h1 className="card card-title">{title}</h1>
+                    <p className="card card-body">{body}</p>
+                </div> }
+        </div>
+    );
 
-    if (href === "") {
-        return(
-            <div className={`card card-object card-justification-${cardJustificationRight ? "right" : "left"} card-is-in-timeline-${isTimelineCard}`}>
-                <Link className={`card-link card-image-on-${imageOnRight ? "right" : "left"}`} to={href}>
+    if (href !== "") {
+        return (
+            <div className={`card card-object card-is-in-timeline-${isTimelineCard}`} >
+                <Link to={href}>
                     {cardContent}
                 </Link>
             </div>
@@ -37,9 +45,9 @@ export function Card({ imageSrc, href, title, body, hideText, imageOnRight, isTi
     }
 
     return (
-        <div className={`card card-object card-justification-${cardJustificationRight ? "right" : "left"} card-is-in-timeline-${isTimelineCard}`}>
+        <div className={`card card-object card-is-in-timeline-${isTimelineCard}`}>
             <div className={`card-link card-image-on-${imageOnRight ? "right" : "left"}`}>
-                    {cardContent}
+                {cardContent}
             </div>
         </div>
     );

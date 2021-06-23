@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { TimelinePage } from '../components/TimelinePage.tsx';
+import { TimelinePage } from '../../components/TimelinePage';
 
 test('renders Timeline Page', () => {
     render(<TimelinePage />);
