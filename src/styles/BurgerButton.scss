@@ -1,6 +1,6 @@
 @import './Constants.scss';
 
-.burger-menu-container {
+.burger-button {
     display: inline-block;
     cursor: pointer;
     position: fixed;
@@ -18,41 +18,42 @@
     margin: 6px 0;
     transition: 0.4s;
   }
-  .bar-1, .bar-2, .bar-3 {
-    @include bar;
-    
+
+  .opened-bar-1, .opened-bar-2, .opened-bar-1 {
+    @include bar; 
   }
   
   /* Rotate first bar */
-  .change-bar-1 {
+  .closed-bar-1 {
     @include bar;
     -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
     transform: rotate(-45deg) translate(-9px, 6px) ;
   }
   
   /* Fade out the second bar */
-  .change-bar-2 {
+  .closed-bar-2 {
     @include bar;
     opacity: 0;
   }
   
   /* Rotate last bar */
-  .change-bar-3 {
+  .closed-bar-3 {
     @include bar;
     -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
     transform: rotate(45deg) translate(-8px, -8px) ;
   }
 
-  @media(min-width: 600px) {
-    .burger-menu-container {
+  @media(min-width: $tabletScreenSize) {
+    .burger-button {
       display: none;
     }
   }
 
-  @media(max-width: 599px) {
+  @media(max-width: $mobileScreenSize) {
     .nav-bar {
       display: none;
     }
+
     .nav-bar-mobile {
       width: 200px;
       position: absolute;
@@ -60,9 +61,8 @@
       background-color: $secondaryDark;
     }
 
-    .nav-bar-mobile a {
+    .nav-link {
       display: block;
       padding: 12px;
-     
     }
   }
