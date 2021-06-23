@@ -7,7 +7,7 @@ import { Rover } from './components/Rover';
 function App() {
 
     return (
-        <Router forceRefresh={true}>
+        <Router>
             <NavBar />
             <div>Replace with component for weather bar</div>
             <Switch>
