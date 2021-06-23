@@ -20,25 +20,25 @@ function RoverWithRoute({ initialRoute }: RoverWithRouteProps) {
     )
 }
 
-test('renders Rover Page', () => {
+test('renders Rover Page - Spirit', () => {
     render(<RoverWithRoute initialRoute={"/SpiRit"} />);
     const roverElement = screen.getByText("Hello Spirit");
     expect(roverElement).toBeInTheDocument();
 });
 
-test('renders Rover Page', () => {
+test('renders Rover Page - Opportunity', () => {
     render(<RoverWithRoute initialRoute={"/opportunity"} />);
     const roverElement = screen.getByText("Hello Opportunity");
     expect(roverElement).toBeInTheDocument();
 });
 
-test('renders Rover Page', () => {
+test('renders Rover Page - Curiosity', () => {
     render(<RoverWithRoute initialRoute={"/CURIOSITY"} />);
     const roverElement = screen.getByText("Hello Curiosity");
     expect(roverElement).toBeInTheDocument();
 });
 
-test('renders Rover Page', () => {
+test('renders Rover Page - redirect to Home', () => {
     render(<RoverWithRoute initialRoute={"/anything"} />);
     const roverElement = screen.getByText("Home Page");
     expect(roverElement).toBeInTheDocument();
