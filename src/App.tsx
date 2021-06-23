@@ -5,7 +5,6 @@ import { Home } from './components/Home';
 import { Rover } from './components/Rover';
 
 function App() {
-
     return (
         <Router>
             <NavBar />
