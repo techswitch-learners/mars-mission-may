@@ -23,17 +23,3 @@
         color: $primaryLight;
     }
 }
-
-@media only screen and (max-width: 425px) {
-    .nav-bar {
-        width: 70%;
-        height: 100vh;
-        justify-content: center;
-        flex-direction: column;
-        position: sticky;
-        float: right;
-        font-size: $subtitleFontSize;
-
-    }
-
-}
