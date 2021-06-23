@@ -6,7 +6,6 @@ import '../styles/NavBar.scss';
 
 export function NavBar() {
     const [closeBurger, setBurgerState] = useState(true);
-
     return (
         <div className='header'>
             <div className={closeBurger ? 'nav-bar' : 'nav-bar-mobile'} data-testid="nav-bar">
