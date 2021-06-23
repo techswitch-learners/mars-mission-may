@@ -6,7 +6,32 @@ You can view it at https://techswitch-mars-mission-may.herokuapp.com/
 (or our staging environment at https://techswitch-mars-mission-may-st.herokuapp.com/)
 
 
-Using the Card Component: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+############### Instructions for using the Card Component: 
 Props: 1 object of type CardProps - which is defined in the card component but is recreated below for clarity:
 
 CardProps {
