@@ -5,12 +5,12 @@ $imageDimensionDesktop:300px;
 $imageDimensionMobile:425px;
 $cardMargin:20px;
 
-
 .card-object {
     margin:$cardMargin;
-    width:$desktopCardWidth;
+    width:$desktopContentWidth;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 30px 10px $primaryDark;
 }
 
 .card-link {
@@ -59,6 +59,7 @@ $cardMargin:20px;
 
     .card-object {
         width:100%;
+        box-shadow: 0px 0px;
     }
     
     .card-link {
