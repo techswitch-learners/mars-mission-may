@@ -1,5 +1,6 @@
 @import './constants.scss';
 
+
 .nav-bar {
     background-color: $primaryDark;
     display: flex;
@@ -25,8 +26,7 @@
 }
 
 @media(max-width: $mobileScreenSize) {
-    .nav-bar {
+    .nav-bar, .current-page {
       display: none;
     }
-
 }

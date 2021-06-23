@@ -18,7 +18,7 @@ export function Rover() {
 
     return (
         <div>
-            <h2>Hello {rover}</h2>
+            <h2 className='current-page'>Hello {rover}</h2>
         </div>
     )
 }

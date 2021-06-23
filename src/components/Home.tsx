@@ -2,7 +2,7 @@
 export function Home () {
     return (
         <div>
-            <h2>Home Page</h2>
+            <h2 className='current-page'>Home Page</h2>
         </div>
     )
 }

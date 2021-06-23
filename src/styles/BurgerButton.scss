@@ -7,6 +7,12 @@
 
 }
 
+.current-page-mobile {
+  color: $primaryText;
+  font-size: $titleFontSize;
+  display: inline-block;
+}
+
 .burger-button {
     display: inline-block;
     cursor: pointer;
@@ -51,7 +57,7 @@
   }
 
   @media(min-width: $mobileScreenSize + 1px) {
-    .burger-button {
+    .burger-button, .current-page-mobile {
       display: none;
     }
   }
