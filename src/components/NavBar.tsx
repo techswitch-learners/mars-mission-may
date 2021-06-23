@@ -10,11 +10,11 @@ export function NavBar() {
     return (
         <div className='header'>
             <div className={closeBurger ? 'nav-bar' : 'nav-bar-mobile'} data-testid="nav-bar">
-                <Link to='/' className = 'nav-link'> Home </Link>
-                <Link to='/spirit' className = 'nav-link'>Spirit </Link>
-                <Link to='/opportunity'className = 'nav-link'>Opportunity</Link>
-                <Link to='/curiosity'className = 'nav-link'>Curiosity</Link>
-                <Link to='/timeline'className = 'nav-link' > Timeline</Link>
+                <Link to='/' className = 'nav-link' onClick={()=>{setBurgerState(true)}}> Home </Link>
+                <Link to='/spirit' className = 'nav-link' onClick={()=>{setBurgerState(true)}}>Spirit </Link>
+                <Link to='/opportunity'className = 'nav-link' onClick={()=>{setBurgerState(true)}}>Opportunity</Link>
+                <Link to='/curiosity'className = 'nav-link' onClick={()=>{setBurgerState(true)}}>Curiosity</Link>
+                <Link to='/timeline'className = 'nav-link' onClick={()=>{setBurgerState(true)}}> Timeline</Link>
             </div>
 
             <div className="burger-button" 
