@@ -21,7 +21,7 @@ test('renders Card Title', () => {
 });
 
 
-test('renders Card Title', () => {
+test('renders Card Body', () => {
     render(
         <Router>
             <Card 
