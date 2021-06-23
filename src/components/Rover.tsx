@@ -6,12 +6,13 @@ interface RoverParams {
 
 export function Rover() {
     const { rover } = useParams<RoverParams>();
-
-    const regexMatch = /(opportunity)|(spirit)|(curiosity)/i
+    // const rover = 'spirit';
+    const RegexMatch = /(opportunity)|(spirit)|(curiosity)/i
 
     return (
         <div>
-            {(rover.match(regexMatch)) ? <h2>Hello {rover}</h2> : <Redirect to="/" /> }
+            <h1>Hello Rover</h1>
+            {(rover.match(RegexMatch)) ? <h2>Hello {rover}</h2> : <Redirect to="/" />}
         </div>
     )
 }
