@@ -9,7 +9,9 @@
     justify-content: center;
     flex-direction: row;
     width: 100vw;
-    height: 80px;
+    height: auto;
+    max-height: 3vw;
+    min-height: 70px;
 
     .footer-logo-container {
         max-width: 1024px;
@@ -23,7 +25,6 @@
 
             img {
                 height: 100%;
-                width: auto;
             }
         }
     }
@@ -31,15 +32,18 @@
 
 @media only screen and (max-width: 426px) {
     .footer {
+
         .footer-logo-container {
-            max-width: 100vw;
+
             a {
-                padding: 1%;
+                display: block;
                 height: auto;
                 width: auto;
 
                 img {
+                    display: block;
                     max-height: 100%;
+                    max-width: 100%;
                     height: auto;
                     width: auto;
                 }
