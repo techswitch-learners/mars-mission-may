@@ -43,7 +43,7 @@
     transform: rotate(45deg) translate(-8px, -8px) ;
   }
 
-  @media(min-width: $tabletScreenSize) {
+  @media(min-width: $mobileScreenSize + 1px) {
     .burger-button {
       display: none;
     }

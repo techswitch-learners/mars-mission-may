@@ -1,7 +1,5 @@
-import React from 'react';
-import { render, screen, shallow } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from '../App';
-import { NavBar } from '../components/NavBar';
 import userEvent from '@testing-library/user-event';
 
 test('renders navbar', () => {

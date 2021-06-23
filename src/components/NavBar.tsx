@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/BurgerButton.scss'
 import { useState } from 'react';
 
@@ -17,8 +16,8 @@ export function NavBar() {
             </div>
 
             <div className="burger-button" 
-                onClick={() => {setBurgerState(!closeBurger)}
-            } data-testid= 'burger-test'>
+                onClick={() => {setBurgerState(!closeBurger)}}
+                data-testid= 'burger-test'>
                 <div className={closeBurger ? "opened-bar-1" : "closed-bar-1"} 
                     data-testid={closeBurger ? "opened-bar-1" : "closed-bar-1"}></div>
                 <div className={closeBurger ? "opened-bar-2" : "closed-bar-2"}></div>
