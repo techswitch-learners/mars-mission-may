@@ -1,5 +1,9 @@
 @import './Constants.scss';
 
+.header {
+  background-color: $primaryDark;
+}
+
 .burger-button {
     display: inline-block;
     cursor: pointer;
@@ -50,15 +54,12 @@
   }
 
   @media(max-width: $mobileScreenSize) {
-    .nav-bar {
-      display: none;
-    }
-
+  
     .nav-bar-mobile {
-      width: 200px;
+      width: 100%;
       position: absolute;
       z-index: 3;
-      background-color: $secondaryDark;
+      background-color: $primaryDark;
     }
 
     .nav-link {

@@ -23,3 +23,9 @@
         color: $primaryLight;
     }
 }
+
+@media(max-width: $mobileScreenSize) {
+    .nav-bar {
+      display: none;
+    }
+}
