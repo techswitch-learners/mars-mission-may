@@ -1,11 +1,11 @@
 import './App.scss';
+import { Footer } from "./components/Footer"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { NavBar } from './components/NavBar';
 import { Home } from './components/Home';
 import { Rover } from './components/Rover';
 
 function App() {
-
     return (
         <Router>
             <NavBar />
@@ -27,7 +27,7 @@ function App() {
                     <div>Sorry path not found</div>
                 </Route>
             </Switch>
-            <div>Replace with component for footer</div>
+            <Footer />
         </Router>
     );
 }
