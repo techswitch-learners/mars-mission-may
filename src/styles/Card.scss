@@ -7,7 +7,8 @@ $cardMargin:20px;
 
 .card-object {
     margin:$cardMargin;
-    width:$desktopContentWidth;
+    // width:$desktopContentWidth;
+    width:100%;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 30px 10px $primaryDark;
@@ -67,6 +68,12 @@ $cardMargin:20px;
     margin-right:$cardMargin;
     padding-left:10px;
     padding-bottom: 15px;
+}
+
+.timeline-card-holder{
+    width:70vw;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 @media (max-width: 430px) {

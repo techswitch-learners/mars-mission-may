@@ -7,7 +7,7 @@ import { Home } from './components/Home';
 
 import { Rover } from './components/Rover';
 import { Timeline } from './components/Timeline';
-import { Card } from './components/Card';
+
 
 function App() {
     return (
@@ -19,7 +19,7 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/timeline">
-
+                    
                     <Timeline />
 
                 </Route>

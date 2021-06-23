@@ -16,6 +16,8 @@ Create an account.
 Copy the API key for your account into .env.ts
 
 ############### Instructions for using the Card Component: 
+
+1) The properties for use are as below: 
 Props: 1 object of type CardProps - which is defined in the card component but is recreated below for clarity:
 
 CardProps {
@@ -28,3 +30,14 @@ CardProps {
     imageOnRight: boolean; - if true the image with the card will be on the right hand side and text on the left. 
     isTimelineCard: boolean; - if true this will shrink the card size for use within the timeline. 
 }
+
+2) Enclosing the element:
+The width of the card is set to 100% of its enclosing object so wrap it in a div and size and position the div as needed. See below for an example from the timeline.tsx: 
+
+            <div className="information-card-holder">
+                <Card imageSrc="https://picsum.photos/id/237/200/300" title="First Title" body="body-text-body-text-body-text-body-text-body-text-body-text-body-text-" href="" showInitialText={true} textHideable={true} imageOnRight={false} isTimelineCard={false} />
+                <Card imageSrc="https://picsum.photos/id/237/200/300" title="First Title" body="body-text-body-text-body-text-body-text-body-text-body-text-body-text-" href="/spirit" showInitialText={true} textHideable={true} imageOnRight={true} isTimelineCard={false} />
+                <Card imageSrc="https://picsum.photos/id/237/200/300" title="First Title" body="body-text-body-text-body-text-body-text-body-text-body-text-body-text-" href="/opportunity" showInitialText={true} textHideable={true} imageOnRight={false} isTimelineCard={false} />
+            </div>
+
+The height of the card is set from on a constant located within the Card.scss file. There is an assumption for desktop and for mobile. If this size does not work then raise a ticket. 
