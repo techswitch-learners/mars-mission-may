@@ -13,42 +13,33 @@ function RoverWithRoute({ initialRoute }: RoverWithRouteProps) {
             <Route path="/:rover">
                 <Rover />
             </Route>
+            <Route path="/">
+                <Home />
+            </Route>
         </MemoryRouter>
     )
 }
 
 test('renders Rover Page', () => {
-    render(<RoverWithRoute initialRoute={"/spirit"} />);
-
+    render(<RoverWithRoute initialRoute={"/SpiRit"} />);
     const roverElement = screen.getByText("Hello Spirit");
-
     expect(roverElement).toBeInTheDocument();
 });
 
 test('renders Rover Page', () => {
     render(<RoverWithRoute initialRoute={"/opportunity"} />);
-
     const roverElement = screen.getByText("Hello Opportunity");
-
     expect(roverElement).toBeInTheDocument();
 });
 
 test('renders Rover Page', () => {
-    render(<RoverWithRoute initialRoute={"/curiosity"} />);
-
+    render(<RoverWithRoute initialRoute={"/CURIOSITY"} />);
     const roverElement = screen.getByText("Hello Curiosity");
-
     expect(roverElement).toBeInTheDocument();
 });
 
 test('renders Rover Page', () => {
-    render(<MemoryRouter initialEntries={["/anything"]}>
-        <Route path="/">
-            <Home />
-        </Route>
-    </MemoryRouter>
-    )
+    render(<RoverWithRoute initialRoute={"/anything"} />);
     const roverElement = screen.getByText("Home Page");
     expect(roverElement).toBeInTheDocument();
 });
-

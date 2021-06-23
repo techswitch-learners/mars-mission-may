@@ -1,7 +1,5 @@
-import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { useParams, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { NavBar } from './components/NavBar';
 import { Home } from './components/Home';
 import { Rover } from './components/Rover';
