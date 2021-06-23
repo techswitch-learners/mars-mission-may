@@ -1,4 +1,5 @@
 import './App.scss';
+import { Footer } from "./components/Footer"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { NavBar } from './components/NavBar';
 import { Home } from './components/Home';
@@ -26,7 +27,7 @@ function App() {
                     <div>Sorry path not found</div>
                 </Route>
             </Switch>
-            <div>Replace with component for footer</div>
+            <Footer />
         </Router>
     );
 }
