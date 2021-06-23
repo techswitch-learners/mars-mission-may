@@ -5,13 +5,12 @@ interface RoverParams {
 }
 
 export function Rover() {
-    const { rover } = useParams<RoverParams>();
-    // const rover = 'spirit';
+    let  { rover } = useParams<RoverParams>();
+    rover = rover.substr(0,1).toUpperCase()+rover.substr(1);
     const RegexMatch = /(opportunity)|(spirit)|(curiosity)/i
 
     return (
         <div>
-            <h1>Hello Rover</h1>
             {(rover.match(RegexMatch)) ? <h2>Hello {rover}</h2> : <Redirect to="/" />}
         </div>
     )
