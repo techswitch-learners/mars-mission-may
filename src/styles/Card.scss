@@ -1,20 +1,30 @@
 @import './constants.scss';
 
 
-$imageDimensionDesktop:200px;
+$imageDimensionDesktop:300px;
 $imageDimensionMobile:425px;
+$cardMargin:20px;
+
+
+.card-object {
+    margin:$cardMargin;
+    width:$desktopCardWidth;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .card-link {
     background-color: $secondaryLight;
-    width: 50%;
+    width:100%;
     display: flex;
     flex-direction: row;
+    padding:10px;
 }
 
 .card-image {
     object-fit: cover;
-    height: 200px;
-    width: 200px;
+    height: $imageDimensionDesktop;
+    width: $imageDimensionDesktop;
     float:right;
 }
 
@@ -36,21 +46,25 @@ $imageDimensionMobile:425px;
 
 .card-body {
     background-color: $primaryLight;
-    font-size: $subtitleFontSize;
+    font-size: $bodyFontSize;
     color: $secondaryText;
     margin-block: 0px;
-    margin-left:20px;
-    margin-right:20px;
+    margin-left:$cardMargin;
+    margin-right:$cardMargin;
     padding-left:10px;
     padding-bottom: 15px;
 }
 
 @media (max-width: 430px) {
+
+    .card-object {
+        width:100%;
+    }
     
     .card-link {
         width: 100%; 
         flex-direction: column;
-        align-items: centre; 
+        padding:0px;
     }
 
     .card-image {
