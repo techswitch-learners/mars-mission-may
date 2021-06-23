@@ -18,7 +18,7 @@ export function Rover() {
 
     return (
         <div>
-            {(rover.match(regexMatch)) && <h2>Hello {rover}</h2>}
+            <h2>Hello {rover}</h2>
         </div>
     )
 }
