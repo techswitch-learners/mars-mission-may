@@ -1,14 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import '../styles/NavBar.scss'
 
 export function NavBar() {
     return (
         <div className='nav-bar'>
-            <Link to='/'> Home </Link>
-            <Link to='/spirit' >Spirit </Link>
-            <Link to='/opportunity'>Opportunity</Link>
-            <Link to='/curiosity'>Curiosity</Link>
-            <Link to='/timeline'> Timeline</Link>
+            <Link className='nav-link' to='/'> Home </Link>
+            <Link className='nav-link' to='/spirit' >Spirit </Link>
+            <Link className='nav-link' to='/opportunity'>Opportunity</Link>
+            <Link className='nav-link' to='/curiosity'>Curiosity</Link>
+            <Link className='nav-link' to='/timeline'> Timeline</Link>
         </div>
     )
 }
