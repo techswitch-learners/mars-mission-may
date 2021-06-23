@@ -44,7 +44,7 @@
         "no-unused-vars": "error",
         "no-irregular-whitespace": "error",
         "no-extra-semi": "error",
-        "unused-imports/no-unused-imports": 2,
+        "unused-imports/no-unused-imports": "error",
         "camelcase":  "error",
         "no-extra-parens": "error"
     }
