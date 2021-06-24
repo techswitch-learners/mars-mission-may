@@ -5,7 +5,7 @@ import { timelineData } from "./timelineData";
 export function Home() {
     return (
         <div className="home">
-            <img src="https://blogs.nasa.gov/redplanetdispatch/wp-content/uploads/sites/279/2018/03/Mars-Website-banner-1024x309.jpg" />
+            <img className="banner-image" src="https://blogs.nasa.gov/redplanetdispatch/wp-content/uploads/sites/279/2018/03/Mars-Website-banner-1024x309.jpg" />
             <div className="home-card-holder">
                 <Card imageSrc={timelineData[2].imageUrl} title={timelineData[2].title} body={timelineData[2].mission as string} href="/curiosity" showInitialText={true} textHideable={false} imageOnRight={false} />
             </div>
@@ -15,6 +15,7 @@ export function Home() {
             <div className="home-card-holder">
                 <Card imageSrc={timelineData[4].imageUrl} title={timelineData[4].title} body={timelineData[4].mission as string} href="/spirit" showInitialText={true} textHideable={false} imageOnRight={false} />
             </div>
+            <div className="footer-padding"></div>
         </div>
     );
 }
