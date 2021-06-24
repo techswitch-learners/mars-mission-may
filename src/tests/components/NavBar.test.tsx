@@ -28,7 +28,7 @@ test("burger button exists", () => {
 test("burger button click changes testId of bars", () => {
     render(<App />);
     const burgerButton = screen.getByTestId("burger-test");
-    userEvent.click(burgerButton); 
+    userEvent.click(burgerButton);
     const closedBar = screen.getByTestId("closed-bar-1");
 
     expect(closedBar).toBeInTheDocument();
