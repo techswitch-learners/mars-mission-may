@@ -1,7 +1,7 @@
 @import "./constants.scss";
 
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     left: 0px;
     background-color: $primaryDark;
@@ -9,8 +9,7 @@
     justify-content: center;
     flex-direction: row;
     width: 100vw;
-    height: auto;
-    max-height: 3vw;
+    height: $footerHeight;
     min-height: 70px;
 
     .footer-logo-container {
