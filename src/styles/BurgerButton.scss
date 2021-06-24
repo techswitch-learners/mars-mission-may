@@ -1,4 +1,4 @@
-@import './Constants.scss';
+@import './constants.scss';
 
 .header {
   background-color: $primaryDark;
@@ -62,7 +62,6 @@
   }
 
   @media(max-width: $mobileScreenSize) {
-  
     .nav-bar-mobile {
       width: 100%;
       position: absolute;
