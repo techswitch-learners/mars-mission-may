@@ -1,10 +1,10 @@
-import "./App.scss";
-import { Footer } from "./components/Footer";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { NavBar } from "./components/NavBar";
-import { Home } from "./components/Home";
-import { Rover } from "./components/Rover";
-import React from "react";
+import './App.scss';
+import { Footer } from "./components/Footer"
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { NavBar } from './components/NavBar';
+import { Home } from './components/Home';
+import { Rover } from './components/Rover';
+import { Timeline } from './components/Timeline';
 
 function App() {
     return (
@@ -16,7 +16,7 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/timeline">
-                    <div>Replace with component for timeline page</div>
+                    <Timeline />
                 </Route>
                 <Route exact path="/:rover">
                     <Rover />
