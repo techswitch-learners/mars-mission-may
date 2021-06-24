@@ -1,8 +1,8 @@
 import '../styles/Card.scss';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-export interface CardProps {
+interface CardProps {
     imageSrc: string;
     href: string;
     title: string;
@@ -10,45 +10,39 @@ export interface CardProps {
     showInitialText: boolean;
     textHideable: boolean;
     imageOnRight: boolean;
-    isTimelineCard: boolean;
 }
 
-export function Card({ imageSrc, href, title, body, showInitialText, textHideable, imageOnRight, isTimelineCard }: CardProps) {
+export function Card({ imageSrc, href, title, body, showInitialText, textHideable, imageOnRight }: CardProps) {
 
     const [textVisible, setTextVisible] = useState(showInitialText);
 
-    function changeToggleText(){
+    function toggleTextVisible(){
         if(textHideable){
             setTextVisible(!textVisible);
-        }  
+        }
     }
 
-    const cardContent = (
-        <div className={`card-link card-image-on-${imageOnRight ? "right" : "left"}`}>
-            <img className="card card-image" src={imageSrc} onClick={changeToggleText} />
-            { textVisible && 
-                <div className="card-text-block">
-                    <h1 className="card card-title">{title}</h1>
-                    <p className="card card-body">{body}</p>
-                </div> }
-        </div>
-    );
+    const cardContent = [<img className="card-image" src={imageSrc} onClick={toggleTextVisible} />]
+
+    if (textVisible) {
+        cardContent.push(
+            <div className="card-text-block">
+                <h1 className="card-title">{title}</h1>
+                <p className="card-body">{body}</p>
+            </div>)
+    }
 
     if (href !== "") {
         return (
-            <div className={`card card-object card-is-in-timeline-${isTimelineCard}`} >
-                <Link to={href}>
-                    {cardContent}
-                </Link>
-            </div>
+            <Link className={`card ${imageOnRight && "card-image-right"}`} to={href}>
+                {cardContent}
+            </Link>
         )
     }
 
     return (
-        <div className={`card card-object card-is-in-timeline-${isTimelineCard}`}>
-            <div className={`card-link card-image-on-${imageOnRight ? "right" : "left"}`}>
-                {cardContent}
-            </div>
+        <div className={`card ${imageOnRight && "card-image-right"}`}>
+            {cardContent}
         </div>
     );
 }
