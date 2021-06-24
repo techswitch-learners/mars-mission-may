@@ -5,30 +5,30 @@ import { Card } from "./Card";
 
 export function Timeline() {
 
-    const map = timelineData.map((post, index) => (
-        <div className={(index % 2 === 0) ? "information-card-holder-right" : "information-card-holder-left"}>
-            <Card imageSrc={post.imageUrl} 
-                    title={`${post.title} - ${post.launchDate}`} 
-                    body={`${post.description} `} 
-                    href="" showInitialText={true} 
-                    textHideable={false} 
-                    imageOnRight={(index % 2 === 0) ? true : false}
+    const map = timelineData.map((post, index) => 
+        <div key={index} className={index % 2 === 0 ? "information-card-holder-right" : "information-card-holder-left"}>
+            <Card imageSrc={post.imageUrl}
+                title={`${post.title} - ${post.launchDate}`}
+                body={`${post.description} `}
+                href="" showInitialText={true}
+                textHideable={false}
+                imageOnRight={index % 2 === 0 ? true : false}
             />
         </div>
-    ));
+    );
 
     return (
-        <div id="timeline-page">
-            <div id="banner-img">
+        <div className="timeline-page">
+            <div className="banner-img">
                 <img alt="" src="https://blogs.nasa.gov/redplanetdispatch/wp-content/uploads/sites/279/2018/03/Mars-Website-banner-1024x309.jpg" />
             </div>
-            <div id="main-card">
+            <div className="main-card">
                 <Card imageSrc={timelineHeaderData.image} title="Timeline" href="" body={timelineHeaderData.text} showInitialText={true} textHideable={false} imageOnRight={false} />
-                
             </div>
-            <div className="cards">
+            <div className="timeline-cards">
                 {map}
             </div>
+            <div className='footer-padding'></div>
         </div>
     );
 }
