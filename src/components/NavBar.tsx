@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../styles/BurgerButton.scss";
 import { useState } from "react";
 import "../styles/NavBar.scss";
 import React from "react";
@@ -16,15 +15,15 @@ export function NavBar() {
     return (
         <div className='header'>
             <div className={closeBurger ? "nav-bar" : "nav-bar-mobile"} data-testid="nav-bar">
-                <Link to='/' className='nav-link' data-testid="home" onClick={() => { clickLinkHandler("Home"); }}> Home </Link>
-                <Link to='/spirit' className='nav-link' data-testid="spirit" onClick={() => { clickLinkHandler("Spirit"); }}>Spirit </Link>
-                <Link to='/opportunity' className='nav-link' data-testid="opportunity" onClick={() => { clickLinkHandler("Opportunity"); }}>Opportunity</Link>
-                <Link to='/curiosity' className='nav-link' data-testid="curiosity" onClick={() => { clickLinkHandler("Curiosity"); }}>Curiosity</Link>
-                <Link to='/timeline' className='nav-link' data-testid="timeline" onClick={() => { clickLinkHandler("Timeline"); }}> Timeline</Link>
+                <Link to='/' className='nav-link' data-testid="home" onClick={() => clickLinkHandler("Home")}> Home </Link>
+                <Link to='/spirit' className='nav-link' data-testid="spirit" onClick={() => clickLinkHandler("Spirit")}>Spirit </Link>
+                <Link to='/opportunity' className='nav-link' data-testid="opportunity" onClick={() => clickLinkHandler("Opportunity")}>Opportunity</Link>
+                <Link to='/curiosity' className='nav-link' data-testid="curiosity" onClick={() => clickLinkHandler("Curiosity")}>Curiosity</Link>
+                <Link to='/timeline' className='nav-link' data-testid="timeline" onClick={() => clickLinkHandler("Timeline")}> Timeline</Link>
             </div>
             <div className='current-page-mobile'>{currentPage}</div>
             <div className="burger-button"
-                onClick={() => { setBurgerState(!closeBurger); }}
+                onClick={() => setBurgerState(!closeBurger)}
                 data-testid='burger-test'>
                 <div className={closeBurger ? "opened-bar-1" : "closed-bar-1"}
                     data-testid={closeBurger ? "opened-bar-1" : "closed-bar-1"}></div>
