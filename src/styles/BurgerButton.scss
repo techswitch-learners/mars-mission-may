@@ -68,9 +68,18 @@
       z-index: 3;
       background-color: $primaryDark;
       
-      .nav-link {
+      .nav-link, .nav-link-selected {
         display: block;
         padding: 12px;
+
+        &:hover {
+          color: $primaryLight; 
+        }
+
+        &:active {
+        margin-top: 0.2%;
+        color: $primaryLight;
+        }
       }
     }  
   }

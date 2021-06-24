@@ -8,8 +8,8 @@
     height: 7vh;
 }
 
-.nav-link {
-    color: $primaryText;
+@mixin nav-link-mixin($color: $primaryText) {
+    color: $color;
     text-decoration: none;
     padding: 0 3%;
     font-weight: 600;
@@ -23,6 +23,17 @@
         margin-top: 0.2%;
         color: $primaryLight;
     }
+    .selected {
+      color: $primaryLight;  
+    }
+}
+
+.nav-link {
+    @include nav-link-mixin;
+}
+
+.nav-link-selected {
+    @include nav-link-mixin($primaryLight);
 }
 
 @media(max-width: $mobileScreenSize) {
