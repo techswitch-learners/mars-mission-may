@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../styles/BurgerButton.scss";
 import { useState } from "react";
 import "../styles/NavBar.scss";
 import React from "react";
