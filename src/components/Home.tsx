@@ -4,7 +4,7 @@ import { timelineData } from "./timelineData";
 
 export function Home() {
     return (
-        <div id="Home" className="home">
+        <div className="home">
             <img src="https://blogs.nasa.gov/redplanetdispatch/wp-content/uploads/sites/279/2018/03/Mars-Website-banner-1024x309.jpg" />
             <div className="home-card-holder">
                 <Card imageSrc={timelineData[2].imageUrl} title={timelineData[2].title} body={timelineData[2].mission as string} href="/curiosity" showInitialText={true} textHideable={false} imageOnRight={false} />

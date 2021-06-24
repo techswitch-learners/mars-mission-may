@@ -1,15 +1,12 @@
 @import "./constants.scss";
 
-#Home {
+.home {
+    padding-bottom: $footerHeight;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: $secondaryColor;
     font-family: $fontFamily;
-}
-
-.home {
-    padding-bottom: $footerHeight;
 }
 
 #banner-img {
