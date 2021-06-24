@@ -1,5 +1,6 @@
 import { PhotoDetails } from "../api/NasaApi";
 import { Dispatch, SetStateAction } from "react";
+import "../styles/Gallery.scss";
 
 interface GalleryProps {
     allPhotoData: PhotoDetails[];
@@ -10,18 +11,19 @@ interface GalleryProps {
 export function Gallery({ allPhotoData, photoSelectedId, setPhotoSelectedId }: GalleryProps) {
     const imgList = allPhotoData.map(imageData =>
         // <Link to={`/${photoId}`} key={photoId}>
-        <img
-            key={imageData.id}
-            alt={imageData.imgSrc}
-            // className={imageData === photoSelectedId ? "small-photo-selected" : "small-photo"}
-            // onClick={() => imageData === photoSelectedId ? setPhotoSelectedId(null) : setPhotoSelectedId(imageData)}
-            src={imageData.imgSrc}
-        />
+        <div key={imageData.id} className="small-photo-container" data-testid="small-photo-container">
+            <img
+                alt={imageData.imgSrc}
+                className={imageData.id === photoSelectedId ? "small-photo-selected" : "small-photo"}
+                onClick={() => imageData.id === photoSelectedId ? setPhotoSelectedId(0) : setPhotoSelectedId(imageData.id)}
+                src={imageData.imgSrc}
+            />
+        </div>
         // </Link>
     );
 
     return (
-        <div className="small-photo-container" data-testid="small-photo-container">
+        <div className="thumbnail-gallery" data-testid="thumbnail-gallery">
             {imgList}
         </div>
     );
