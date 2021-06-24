@@ -1,0 +1,21 @@
+@import './constants.scss';
+
+.information-card-holder{
+    width:70vw;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+@media (max-width: 430px) {
+    .information-card-holder{
+        width:100vw;
+        margin-left:0px;
+        margin-right:0px;
+    }
+}  height: 40vh;
+    }
+}
+
+.cards {
+    font-size: $bodyFontSize;
+}

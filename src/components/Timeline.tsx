@@ -1,6 +1,7 @@
 import { timelineData, timelineHeaderData } from "./timelineData";
 import "../styles/constants.scss";
 import "../styles/timeline.scss";
+import { Card } from "./Card";
 
 export function Timeline() {
 
@@ -11,6 +12,7 @@ export function Timeline() {
             <h3>{post.status}</h3>
             <p>{post.description}</p>
             <img alt="" src={post.imageUrl} />
+                <Card imageSrc="https://picsum.photos/id/237/200/300" title="First Title" body="body-text-body-text-body-text-body-text-body-text-body-text-body-text-" href="" showInitialText={true} textHideable={true} imageOnRight={false} />
         </div>
     ));
 

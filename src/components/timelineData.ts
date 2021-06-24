@@ -26,25 +26,25 @@ export const timelineData =
         description: 'Curiosity of the Mars Science Laboratory (MSL) mission by NASA, and landed at the Aeolis Palus plain near Aeolis Mons (informally "Mount Sharp") in Gale Crater on August 6, 2012. The Curiosity rover is still operational as of June 2021.'
     },
     {
-        launchDate: 'July 7, 2003',
-        title: 'Opportunity',
-        status: 'No longer active',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/NASA_Mars_Rover.jpg/260px-NASA_Mars_Rover.jpg',
-        describe: 'Opportunity surpassed the previous records for longevity at 5,352 sols (5498 Earth days from landing to mission end; 15 Earth years or 8 Martian years) and covered 45.16 km (28.06 mi). The rover sent its last status on 10 June 2018 when a global 2018 Mars dust storm blocked the sunlight needed to recharge its batteries. After hundreds of attempts to reactivate the rover, NASA declared the mission complete on February 13, 2019.'
+        launchDate: "July 7, 2003",
+        title: "Opportunity",
+        status: "No longer active",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/NASA_Mars_Rover.jpg/260px-NASA_Mars_Rover.jpg",
+        describe: "Opportunity surpassed the previous records for longevity at 5,352 sols (5498 Earth days from landing to mission end; 15 Earth years or 8 Martian years) and covered 45.16 km (28.06 mi). The rover sent its last status on 10 June 2018 when a global 2018 Mars dust storm blocked the sunlight needed to recharge its batteries. After hundreds of attempts to reactivate the rover, NASA declared the mission complete on February 13, 2019."
 
     },
     {
-        launchDate: 'June 10, 2003',
-        title: 'Spirit',
-        status: 'No longer active',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/KSC-03PD-0786.jpg/480px-KSC-03PD-0786.jpg',
-        description: 'Mars Exploration Rover (MER), launched on June 10, 2003, and landed on January 4, 2004. Nearly 6 years after the original mission limit, Spirit had covered a total distance of 7.73 km (4.80 mi) but its wheels became trapped in sand. The last communication received from the rover was on March 22, 2010, and NASA ceased attempts to re-establish communication on May 25, 2011.'
+        launchDate: "June 10, 2003",
+        title: "Spirit",
+        status: "No longer active",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/KSC-03PD-0786.jpg/480px-KSC-03PD-0786.jpg",
+        description: "Mars Exploration Rover (MER), launched on June 10, 2003, and landed on January 4, 2004. Nearly 6 years after the original mission limit, Spirit had covered a total distance of 7.73 km (4.80 mi) but its wheels became trapped in sand. The last communication received from the rover was on March 22, 2010, and NASA ceased attempts to re-establish communication on May 25, 2011."
     },
     {
-        launchDate: ' July 4, 1997',
-        title: 'Sojourner',
-        status: 'No longer active',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Sojourner_on_Mars_PIA01122.jpg/260px-Sojourner_on_Mars_PIA01122.jpg',
-        description: 'Communications were lost on September 27, 1997. Sojourner had traveled a distance of just over 100 meters (330 ft).'
+        launchDate: " July 4, 1997",
+        title: "Sojourner",
+        status: "No longer active",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Sojourner_on_Mars_PIA01122.jpg/260px-Sojourner_on_Mars_PIA01122.jpg",
+        description: "Communications were lost on September 27, 1997. Sojourner had traveled a distance of just over 100 meters (330 ft)."
     }
-]
+];
