@@ -4,14 +4,11 @@ import userEvent from "@testing-library/user-event";
 
 test("renders navbar", () => {
     render(<App />);
-
-    const home = screen.getByTestId("home");
     const curiosity = screen.getByTestId("curiosity");
     const opportunity = screen.getByTestId("opportunity");
     const spirit = screen.getByTestId("spirit");
     const timeline = screen.getByTestId("timeline");
 
-    expect(home).toBeInTheDocument();
     expect(curiosity).toBeInTheDocument();
     expect(opportunity).toBeInTheDocument();
     expect(spirit).toBeInTheDocument();
@@ -33,3 +30,12 @@ test("burger button click changes testId of bars", () => {
 
     expect(closedBar).toBeInTheDocument();
 });
+
+test('current page is highlighted in NavBar', () => {
+    render(<App />); 
+    const curiosityButton = screen.getByTestId("curiosity");
+    userEvent.click(curiosityButton); 
+    const homeNotSelected = screen.getByTestId("home-not-selected");
+    
+    expect(homeNotSelected).toBeInTheDocument();
+})
