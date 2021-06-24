@@ -1,33 +1,34 @@
-import { NASA_BASE_URL, NASA_API_KEY } from '../.env';
+import { getRoverImages } from "../api/NASAAPI";
+import { useAsync } from "react-async";
+import React from "react";
 
 export function Gallery(props) {
-    useEffect(()=>{
-        
-    }, [])
-    const imageList = getRoverImages();
-    const imgList = imageList.map(
-        (imageObj) =>
-            // <Link to={`/${photoId}`} key={photoId}>
+    // useEffect(()=>{
+
+    // }, [])
+    const { imageList, error, isLoading } = useAsync({ promiseFn: getRoverImages(props.rover) });
+    if (isLoading) { return "Loading..."; }
+    if (error) { return `Something went wrong: ${error.message}`; }
+    if (imageList) {
+        console.log(imageList);
+        imageList = imageList.photos;
+        const imgList = imageList.map(
+            (imageObj) =>
+                // <Link to={`/${photoId}`} key={photoId}>
                 <img
+                    key={imageObj.id}
                     alt={imageObj.id}
                     className={imageObj === props.photoSelected ? "small-photo-selected" : "small-photo"}
                     onClick={() => imageObj === props.photoSelected ? props.setPhotoSelected(null) : props.setPhotoSelected(imageObj)}
                     src={imageObj.img_src}
                 />
             // </Link>
-    );
-    
-    return (
-        <div className="small-photo-container" data-testid="small-photo-container">
-            {imgList}
-        </div>
-    );
-}
+        );
 
-
-async function getRoverImages (rover: string) {
-    const imageList = await fetch(`${NASA_BASE_URL}mars-photos/api/v1/rovers/${rover}/photos?sol=1000&api_key=${NASA_API_KEY}`)
-        .then(response => response.json())
-        .then(result => result.photos);
-    return imageList;
+        return (
+            <div className="small-photo-container" data-testid="small-photo-container">
+                {imgList}
+            </div>
+        );
+    }
 }
