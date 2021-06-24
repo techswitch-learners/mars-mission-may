@@ -19,9 +19,9 @@ export function Rover() {
 
     return (
         <div>
-            <div>{findRover(rover)}</div>
+            <div data-testid={rover}>{findRover(rover)}</div>
             <div>Big Photo</div>
-            <div>Galery</div>
+            <div>Gallery</div>
         </div>
     );
 }
@@ -41,7 +41,7 @@ function findRover(rover: string) {
     }
 
     if (data) {
-        return <Card imageSrc={data.imageUrl} href="" title={data.rover} body={data.description} showInitialText={true} textHideable={true} imageOnRight={false} />;
+        return <Card imageSrc={data.imageUrl} href="" title={data.rover} body={data.description} showInitialText={true} textHideable={true} imageOnRight={true} />;
     }
 
     return <h1>waiting</h1>;
