@@ -17,9 +17,7 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/timeline">
-                    
                     <Timeline />
-
                 </Route>
                 <Route exact path="/:rover">
                     <Rover />
