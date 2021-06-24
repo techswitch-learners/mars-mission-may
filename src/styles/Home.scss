@@ -1,4 +1,5 @@
 @import "./constants.scss";
+
 #Home {
     display: flex;
     flex-direction: column;
@@ -17,4 +18,18 @@
 
 .cards {
     font-size: $bodyFontSize;
+}
+
+.home-card-holder{
+    width:$CardInformationWidth;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+@media (max-width: 430px) {
+    .home-card-holder{
+        width:100vw;
+        margin-left:0px;
+        margin-right:0px;
+    }
 }
