@@ -4,7 +4,6 @@
   background-color: $primaryDark;
   position: absolute top 0px;
   height: 50px;
-
 }
 
 .current-page-mobile {
@@ -73,6 +72,15 @@
       .nav-link {
         display: block;
         padding: 12px;
+
+        &:hover {
+          color: $primaryLight; 
+        }
+
+        &:active {
+        margin-top: 0.2%;
+        color: $primaryLight;
+        }
       }
     }  
   }

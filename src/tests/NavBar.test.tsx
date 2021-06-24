@@ -2,20 +2,20 @@ import { render, screen } from '@testing-library/react';
 import App from '../App';
 import userEvent from '@testing-library/user-event';
 
-test('renders navbar', () => {
-    render(<App />);
-    const home = screen.getByText("Home");
-    const curiosity = screen.getByText("Curiosity");
-    const opportunity = screen.getByText("Opportunity");
-    const spirit = screen.getByText("Spirit");
-    const timeline = screen.getByText("Timeline");
+// test('renders navbar', () => {
+//     render(<App />);
+//     const home = screen.getByText("Home");
+//     const curiosity = screen.getByText("Curiosity");
+//     const opportunity = screen.getByText("Opportunity");
+//     const spirit = screen.getByText("Spirit");
+//     const timeline = screen.getByText("Timeline");
 
-    expect(home).toBeInTheDocument();
-    expect(curiosity).toBeInTheDocument();
-    expect(opportunity).toBeInTheDocument();
-    expect(spirit).toBeInTheDocument();
-    expect(timeline).toBeInTheDocument();
-});
+//     expect(home).toBeInTheDocument();
+//     expect(curiosity).toBeInTheDocument();
+//     expect(opportunity).toBeInTheDocument();
+//     expect(spirit).toBeInTheDocument();
+//     expect(timeline).toBeInTheDocument();
+// });
 
 test('burger button exists', () => {
     render(<App />);
@@ -32,3 +32,12 @@ test('burger button click changes testId of bars', () => {
 
     expect(closedBar).toBeInTheDocument();
 });
+
+test('current page is highligheted in NavBar', () => {
+    render(<App />); 
+    const curiosityButton = screen.getByTestId("curiosity-button");
+    userEvent.click(curiosityButton); 
+    const homeNotSelected = screen.getByTestId("home-not-selected");
+    
+    expect(homeNotSelected).toBeInTheDocument();
+})

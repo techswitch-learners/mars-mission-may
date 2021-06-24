@@ -11,11 +11,11 @@ export function NavBar() {
     return (
         <div className='header'>
             <div className={closeBurger ? 'nav-bar' : 'nav-bar-mobile'} data-testid="nav-bar">
-                <Link to='/' className = 'nav-link' onClick={()=>{setBurgerState(true); setCurrentPage('Home')}}> Home </Link>
-                <Link to='/spirit' className = 'nav-link' onClick={()=>{setBurgerState(true); setCurrentPage('Spirit')}}>Spirit </Link>
-                <Link to='/opportunity'className = 'nav-link' onClick={()=>{setBurgerState(true); setCurrentPage('Opportunity')}}>Opportunity</Link>
-                <Link to='/curiosity'className = 'nav-link' onClick={()=>{setBurgerState(true); setCurrentPage('Curiosity')}}>Curiosity</Link>
-                <Link to='/timeline'className = 'nav-link' onClick={()=>{setBurgerState(true); setCurrentPage('Timeline')}}> Timeline</Link>
+                <Link to='/' className ={(currentPage === 'Home') ? 'nav-link-selected' : 'nav-link'} onClick={()=>{setBurgerState(true); setCurrentPage('Home')}} data-testid ={(currentPage === 'Home') ? 'home-selected' : 'home-not-selected'}> Home </Link>
+                <Link to='/spirit' className = {(currentPage === 'Spirit') ? 'nav-link-selected' : 'nav-link'} onClick={()=>{setBurgerState(true); setCurrentPage('Spirit')}}>Spirit </Link>
+                <Link to='/opportunity'className = {(currentPage === 'Opportunity') ? 'nav-link-selected' : 'nav-link'} onClick={()=>{setBurgerState(true); setCurrentPage('Opportunity')}}>Opportunity</Link>
+                <Link to='/curiosity'className = {(currentPage === 'Curiosity') ? 'nav-link-selected' : 'nav-link'} onClick={()=>{setBurgerState(true); setCurrentPage('Curiosity')}} data-testid = 'curiosity-button'>Curiosity</Link>
+                <Link to='/timeline'className = {(currentPage === 'Timeline') ? 'nav-link-selected' : 'nav-link'}  onClick={()=>{setBurgerState(true); setCurrentPage('Timeline')}}> Timeline</Link>
             </div>
             <div className= 'current-page-mobile'>{currentPage}</div>
             <div className="burger-button" 
