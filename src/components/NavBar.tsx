@@ -3,19 +3,23 @@ import '../styles/BurgerButton.scss'
 import { useState } from 'react';
 import '../styles/NavBar.scss';
 
-
 export function NavBar() {
     const [closeBurger, setBurgerState] = useState(true);
     const [currentPage, setCurrentPage] = useState('Home');
 
+    function clickLinkHandler (currentPage: string) {
+        setBurgerState(true); 
+        setCurrentPage(currentPage);
+    }
+
     return (
         <div className='header'>
             <div className={closeBurger ? 'nav-bar' : 'nav-bar-mobile'} data-testid="nav-bar">
-                <Link to='/' className = 'nav-link' onClick={()=>{setBurgerState(true); setCurrentPage('Home')}}> Home </Link>
-                <Link to='/spirit' className = 'nav-link' onClick={()=>{setBurgerState(true); setCurrentPage('Spirit')}}>Spirit </Link>
-                <Link to='/opportunity'className = 'nav-link' onClick={()=>{setBurgerState(true); setCurrentPage('Opportunity')}}>Opportunity</Link>
-                <Link to='/curiosity'className = 'nav-link' onClick={()=>{setBurgerState(true); setCurrentPage('Curiosity')}}>Curiosity</Link>
-                <Link to='/timeline'className = 'nav-link' onClick={()=>{setBurgerState(true); setCurrentPage('Timeline')}}> Timeline</Link>
+                <Link to='/' className = 'nav-link' onClick={()=>{clickLinkHandler('Home')}}> Home </Link>
+                <Link to='/spirit' className = 'nav-link' onClick={()=>{clickLinkHandler('Spirit')}}>Spirit </Link>
+                <Link to='/opportunity'className = 'nav-link' onClick={()=>{clickLinkHandler('Opportunity')}}>Opportunity</Link>
+                <Link to='/curiosity'className = 'nav-link' onClick={()=>{clickLinkHandler('Curiosity')}}>Curiosity</Link>
+                <Link to='/timeline'className = 'nav-link' onClick={()=>{clickLinkHandler('Timeline')}}> Timeline</Link>
             </div>
             <div className= 'current-page-mobile'>{currentPage}</div>
             <div className="burger-button" 
