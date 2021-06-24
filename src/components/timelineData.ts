@@ -1,36 +1,36 @@
 export const timelineHeaderData = {
     image: "https://gumlet.assettype.com/freepressjournal%2F2020-12%2F2b868206-0252-4386-9d77-b9b92f96a72f%2Fetc_2nd_lead_dec_1.jpg?w=1200&auto=format%2Ccompress&ogImage=true",
-    text: "Since our first close-up picture of Mars in 1965, spacecraft voyages to the Red Planet have revealed a world strangely familiar, yet different enough to challenge our perceptions of what makes a planet work. Every time we feel close to understanding Mars, new discoveries send us straight back to the drawing board to revise existing theories."}
+    text: "Since our first close-up picture of Mars in 1965, spacecraft voyages to the Red Planet have revealed a world strangely familiar, yet different enough to challenge our perceptions of what makes a planet work. Every time we feel close to understanding Mars, new discoveries send us straight back to the drawing board to revise existing theories."};
 
 export const timelineData = 
 [
     {
-        launchDate: 'To be confirmed',
-        title: 'NASA Mars Geyser Hopper',
-        status: 'Proposed',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/NASA_Mars_Polar_Geyser_Hopper.jpg/480px-NASA_Mars_Polar_Geyser_Hopper.jpg',
-        description: 'The Mars Geyser Hopper (MGH) is a NASA design reference mission for a Discovery-class spacecraft concept that would investigate the springtime carbon dioxide Martian geysers found in regions around the south pole of Mars.'
+        launchDate: "To be confirmed",
+        title: "NASA Mars Geyser Hopper",
+        status: "Proposed",
+        imageUrl: "https://www.researchgate.net/profile/Geoffrey-Landis/publication/258676254/figure/fig2/AS:909591009312768@1593874804366/Mars-Geyser-hopper-shown-as-deployed-on-Martian-surface-with-sampling-arm-extended.png",
+        description: "The Mars Geyser Hopper (MGH) is a NASA design reference mission for a Discovery-class spacecraft concept that would investigate the springtime carbon dioxide Martian geysers found in regions around the south pole of Mars."
     },
     {
-        launchDate: 'July 30, 2020',
-        title: 'Perserverance',
+        launchDate: "July 30, 2020",
+        title: "Perserverance",
         status: "Active",
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Mars_2020_selfie_containing_both_perseverance_rover_and_ingenuity.gif/300px-Mars_2020_selfie_containing_both_perseverance_rover_and_ingenuity.gif',
-        description: 'NASA rover based on the successful Curiosity design. Launched with the Mars 2020 mission on July 30, 2020, it landed on February 18, 2021. It carried the Mars Helicopter Ingenuity attached to its belly.'
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Mars_2020_selfie_containing_both_perseverance_rover_and_ingenuity.gif/300px-Mars_2020_selfie_containing_both_perseverance_rover_and_ingenuity.gif",
+        description: "NASA rover based on the successful Curiosity design. Launched with the Mars 2020 mission on July 30, 2020, it landed on February 18, 2021. It carried the Mars Helicopter Ingenuity attached to its belly."
     },
     {
-        launchDate: 'November 26, 2011',
-        title: 'Curiosity',
+        launchDate: "November 26, 2011",
+        title: "Curiosity",
         status: "Active",
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Curiosity_Self-Portrait_at_%27Big_Sky%27_Drilling_Site.jpg/260px-Curiosity_Self-Portrait_at_%27Big_Sky%27_Drilling_Site.jpg',
-        description: 'Curiosity of the Mars Science Laboratory (MSL) mission by NASA, and landed at the Aeolis Palus plain near Aeolis Mons (informally "Mount Sharp") in Gale Crater on August 6, 2012. The Curiosity rover is still operational as of June 2021.'
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Curiosity_Self-Portrait_at_%27Big_Sky%27_Drilling_Site.jpg/260px-Curiosity_Self-Portrait_at_%27Big_Sky%27_Drilling_Site.jpg",
+        description: "Curiosity of the Mars Science Laboratory (MSL) mission by NASA, and landed at the Aeolis Palus plain near Aeolis Mons (informally \"Mount Sharp\") in Gale Crater on August 6, 2012. The Curiosity rover is still operational as of June 2021."
     },
     {
         launchDate: "July 7, 2003",
         title: "Opportunity",
         status: "No longer active",
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/NASA_Mars_Rover.jpg/260px-NASA_Mars_Rover.jpg",
-        describe: "Opportunity surpassed the previous records for longevity at 5,352 sols (5498 Earth days from landing to mission end; 15 Earth years or 8 Martian years) and covered 45.16 km (28.06 mi). The rover sent its last status on 10 June 2018 when a global 2018 Mars dust storm blocked the sunlight needed to recharge its batteries. After hundreds of attempts to reactivate the rover, NASA declared the mission complete on February 13, 2019."
+        description: "Opportunity surpassed the previous records for longevity at 5,352 sols (5498 Earth days from landing to mission end; 15 Earth years or 8 Martian years) and covered 45.16 km (28.06 mi). The rover sent its last status on 10 June 2018 when a global 2018 Mars dust storm blocked the sunlight needed to recharge its batteries. After hundreds of attempts to reactivate the rover, NASA declared the mission complete on February 13, 2019."
 
     },
     {

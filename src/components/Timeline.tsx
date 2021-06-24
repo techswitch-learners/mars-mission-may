@@ -5,14 +5,15 @@ import { Card } from "./Card";
 
 export function Timeline() {
 
-    const map = timelineData.map((post) => (
-        <div>
-            <h3>{post.launchDate}</h3>
-            <h3>{post.title}</h3>
-            <h3>{post.status}</h3>
-            <p>{post.description}</p>
-            <img alt="" src={post.imageUrl} />
-                <Card imageSrc="https://picsum.photos/id/237/200/300" title="First Title" body="body-text-body-text-body-text-body-text-body-text-body-text-body-text-" href="" showInitialText={true} textHideable={true} imageOnRight={false} />
+    const map = timelineData.map((post, index) => (
+        <div className={(index % 2 === 0) ? "information-card-holder-right" : "information-card-holder-left"}>
+            <Card imageSrc={post.imageUrl} 
+                    title={`${post.title} - ${post.launchDate}`} 
+                    body={`${post.description} `} 
+                    href="" showInitialText={true} 
+                    textHideable={false} 
+                    imageOnRight={(index % 2 === 0) ? true : false}
+            />
         </div>
     ));
 
@@ -22,8 +23,8 @@ export function Timeline() {
                 <img alt="" src="https://blogs.nasa.gov/redplanetdispatch/wp-content/uploads/sites/279/2018/03/Mars-Website-banner-1024x309.jpg" />
             </div>
             <div id="main-card">
-                <img alt="" src={timelineHeaderData.image} />
-                <p>{timelineHeaderData.text}</p>
+                <Card imageSrc={timelineHeaderData.image} title="Timeline" href="" body={timelineHeaderData.text} showInitialText={true} textHideable={false} imageOnRight={false} />
+                
             </div>
             <div className="cards">
                 {map}
