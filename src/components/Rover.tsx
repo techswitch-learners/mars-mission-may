@@ -2,6 +2,7 @@ import { useParams, Redirect } from "react-router-dom";
 import React from "react";
 import { Card } from "./Card";
 import { rovers } from "./RoverData";
+import "../styles/RoverPage.scss";
 
 interface RoverParams {
     rover: string;
@@ -18,7 +19,7 @@ export function Rover() {
     }
 
     return (
-        <div>
+        <div className = "rover-page">
             <div data-testid={rover}>{findRover(rover)}</div>
             <div>Big Photo</div>
             <div>Gallery</div>
@@ -33,10 +34,10 @@ function findRover(rover: string) {
         data = rovers[0];
         break;
     case "opportunity":
-        data = rovers[2];
+        data = rovers[1];
         break;
     case "curiosity":
-        data = rovers[1];
+        data = rovers[2];
         break;
     }
 
