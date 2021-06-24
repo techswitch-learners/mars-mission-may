@@ -40,12 +40,19 @@
             "error",
             "always"
         ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 1
+            }
+        ],
         "no-console": "error",
         "no-unused-vars": "error",
         "no-irregular-whitespace": "error",
         "no-extra-semi": "error",
         "unused-imports/no-unused-imports": "error",
-        "camelcase":  "error",
-        "no-extra-parens": "error"
+        "camelcase": "error",
+        "no-extra-parens": "error",
+        "react/react-in-jsx-scope": "off"
     }
 }
