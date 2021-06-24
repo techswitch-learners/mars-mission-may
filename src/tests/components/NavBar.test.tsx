@@ -1,7 +1,6 @@
-import { render, screen } from '@testing-library/react';
-import App from '../../App';
-import { NavBar } from '../../components/NavBar';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from "@testing-library/react";
+import App from "../../App";
+import userEvent from "@testing-library/user-event";
 
 test("renders navbar", () => {
     render(<App />);
