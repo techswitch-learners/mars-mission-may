@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom';
-import '../styles/BurgerButton.scss'
-import { useState } from 'react';
-import '../styles/NavBar.scss';
-
+import { Link } from "react-router-dom";
+import "../styles/BurgerButton.scss";
+import { useState } from "react";
+import "../styles/NavBar.scss";
+import React from "react";
 
 export function NavBar() {
     const [closeBurger, setBurgerState] = useState(true);
 
     return (
         <div className='header'>
-            <div className={closeBurger ? 'nav-bar' : 'nav-bar-mobile'} data-testid="nav-bar">
+            <div className={closeBurger ? "nav-bar" : "nav-bar-mobile"} data-testid="nav-bar">
                 <Link to='/' className = 'nav-link'> Home </Link>
                 <Link to='/spirit' className = 'nav-link'>Spirit </Link>
                 <Link to='/opportunity'className = 'nav-link'>Opportunity</Link>
@@ -18,7 +18,7 @@ export function NavBar() {
             </div>
 
             <div className="burger-button" 
-                onClick={() => {setBurgerState(!closeBurger)}}
+                onClick={() => {setBurgerState(!closeBurger);}}
                 data-testid= 'burger-test'>
                 <div className={closeBurger ? "opened-bar-1" : "closed-bar-1"} 
                     data-testid={closeBurger ? "opened-bar-1" : "closed-bar-1"}></div>
@@ -26,5 +26,5 @@ export function NavBar() {
                 <div className={closeBurger ? "opened-bar-3" : "closed-bar-3"}></div>
             </div>
         </div>
-    )
+    );
 }

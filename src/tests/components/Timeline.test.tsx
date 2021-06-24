@@ -6,8 +6,8 @@ test('renders Timeline', () => {
     render(
         <Router>
             <Timeline />
-            const timelineElement = screen.getByText("Timeline");
-            expect(timelineElement).toBeInTheDocument();
         </Router>
     );
+    const timelineElement = screen.getByText("Timeline");
+    expect(timelineElement).toBeInTheDocument();
 });
