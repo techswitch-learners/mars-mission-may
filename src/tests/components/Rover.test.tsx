@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import { Rover } from '../../components/Rover';
+import { render, screen } from "@testing-library/react";
+import { Rover } from "../../components/Rover";
 import { MemoryRouter, Route } from "react-router-dom";
-import { Home } from '../../components/Home';
+import { Home } from "../../components/Home";
+import React from "react";
 
 interface RoverWithRouteProps {
     initialRoute: string;
@@ -17,28 +18,28 @@ function RoverWithRoute({ initialRoute }: RoverWithRouteProps) {
                 <Home />
             </Route>
         </MemoryRouter>
-    )
+    );
 }
 
-test('renders Rover Page - Spirit', () => {
+test("renders Rover Page - Spirit", () => {
     render(<RoverWithRoute initialRoute={"/SpiRit"} />);
     const roverElement = screen.getByText("Hello Spirit");
     expect(roverElement).toBeInTheDocument();
 });
 
-test('renders Rover Page - Opportunity', () => {
+test("renders Rover Page - Opportunity", () => {
     render(<RoverWithRoute initialRoute={"/opportunity"} />);
     const roverElement = screen.getByText("Hello Opportunity");
     expect(roverElement).toBeInTheDocument();
 });
 
-test('renders Rover Page - Curiosity', () => {
+test("renders Rover Page - Curiosity", () => {
     render(<RoverWithRoute initialRoute={"/CURIOSITY"} />);
     const roverElement = screen.getByText("Hello Curiosity");
     expect(roverElement).toBeInTheDocument();
 });
 
-test('renders Rover Page - redirect to Home', () => {
+test("renders Rover Page - redirect to Home", () => {
     render(<RoverWithRoute initialRoute={"/anything"} />);
     const roverElement = screen.getByText("Home Page");
     expect(roverElement).toBeInTheDocument();

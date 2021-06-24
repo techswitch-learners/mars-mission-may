@@ -9,12 +9,12 @@ interface RoverParams {
 export function Rover() {
     const [photoSelected, setPhotoSelected] = useState(null);
     let { rover } = useParams<RoverParams>();
-    const regexMatch = /(opportunity)|(spirit)|(curiosity)/i
+    const regexMatch = /(opportunity)|(spirit)|(curiosity)/i;
 
     if(!rover.match(regexMatch)){
         return (
             <Redirect to="/" />
-        )
+        );
     }
 
     rover = rover.substr(0, 1).toUpperCase() + rover.substr(1).toLowerCase();
@@ -26,5 +26,5 @@ export function Rover() {
             <div> Large photo card </div>
             <Gallery photoSelected={photoSelected} setPhotoSelected={setPhotoSelected} />
         </div>
-    )
+    );
 }
