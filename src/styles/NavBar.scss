@@ -1,0 +1,32 @@
+@import './constants.scss';
+
+
+.nav-bar {
+    background-color: $primaryDark;
+    display: flex;
+    justify-content: center;
+    height: 7vh;
+}
+
+.nav-link {
+    color: $primaryText;
+    text-decoration: none;
+    padding: 0 3%;
+    font-weight: 600;
+    align-self: center;
+
+    &:hover {
+        color: $primaryLight; 
+    }
+
+    &:active {
+        margin-top: 0.2%;
+        color: $primaryLight;
+    }
+}
+
+@media(max-width: $mobileScreenSize) {
+    .nav-bar, .current-page {
+      display: none;
+    }
+}
