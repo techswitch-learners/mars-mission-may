@@ -1,21 +1,21 @@
-import { PhotoDetails } from "../api/NASAAPI";
+import { PhotoDetails } from "../api/NasaApi";
+import { Dispatch, SetStateAction } from "react";
 
 interface GalleryProps {
     allPhotoData: PhotoDetails[];
     photoSelectedId: number;
-    setPhotoSelectedId: setValue;
+    setPhotoSelectedId: Dispatch<SetStateAction<number>>;
 }
 
 export function Gallery({ allPhotoData, photoSelectedId, setPhotoSelectedId }: GalleryProps) {
-
     const imgList = allPhotoData.map(imageData =>
         // <Link to={`/${photoId}`} key={photoId}>
         <img
             key={imageData.id}
-            alt={imageData.img_src}
+            alt={imageData.imgSrc}
             // className={imageData === photoSelectedId ? "small-photo-selected" : "small-photo"}
             // onClick={() => imageData === photoSelectedId ? setPhotoSelectedId(null) : setPhotoSelectedId(imageData)}
-            src={imageData.img_src}
+            src={imageData.imgSrc}
         />
         // </Link>
     );
