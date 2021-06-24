@@ -1,9 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import App from "../../App";
 import userEvent from "@testing-library/user-event";
+import { NavBar } from "../../components/NavBar";
+import { BrowserRouter as Router } from "react-router-dom";
+import React from "react";
 
 test("renders navbar", () => {
-    render(<App />);
+    render(<Router><NavBar /></Router>);
     const curiosity = screen.getByTestId("curiosity");
     const opportunity = screen.getByTestId("opportunity");
     const spirit = screen.getByTestId("spirit");
@@ -16,14 +18,14 @@ test("renders navbar", () => {
 });
 
 test("burger button exists", () => {
-    render(<App />);
+    render(<Router><NavBar /></Router>);
     const burgerButton = screen.getByTestId("burger-test");
 
     expect(burgerButton).toBeInTheDocument();
 });
 
 test("burger button click changes testId of bars", () => {
-    render(<App />);
+    render(<Router><NavBar /></Router>);
     const burgerButton = screen.getByTestId("burger-test");
     userEvent.click(burgerButton);
     const closedBar = screen.getByTestId("closed-bar-1");
@@ -32,7 +34,7 @@ test("burger button click changes testId of bars", () => {
 });
 
 test('current page is highlighted in NavBar', () => {
-    render(<App />); 
+    render(<Router><NavBar /></Router>);
     const curiosityButton = screen.getByTestId("curiosity");
     userEvent.click(curiosityButton); 
     const homeNotSelected = screen.getByTestId("home-not-selected");
