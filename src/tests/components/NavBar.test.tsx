@@ -33,11 +33,11 @@ test("burger button click changes testId of bars", () => {
     expect(closedBar).toBeInTheDocument();
 });
 
-test('current page is highlighted in NavBar', () => {
+test("current page is highlighted in NavBar", () => {
     render(<Router><NavBar /></Router>);
     const curiosityButton = screen.getByTestId("curiosity");
     userEvent.click(curiosityButton); 
     const homeNotSelected = screen.getByTestId("home-not-selected");
     
     expect(homeNotSelected).toBeInTheDocument();
-})
+});
