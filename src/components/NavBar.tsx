@@ -22,22 +22,26 @@ export function NavBar() {
                     Home
                 </Link>
                 <Link to='/spirit'
-                    className={currentPage === "Spirit" ? "nav-link-selected" : "nav-link"} data-testid="spirit"
+                    className={currentPage === "Spirit" ? "nav-link-selected" : "nav-link"} 
+                    data-testid="spirit"
                     onClick={() => clickLinkHandler("Spirit")}>
                     Spirit
                 </Link>
                 <Link to='/opportunity'
-                    className={currentPage === "Opportunity" ? "nav-link-selected" : "nav-link"} data-testid="opportunity"
+                    className={currentPage === "Opportunity" ? "nav-link-selected" : "nav-link"} 
+                    data-testid="opportunity"
                     onClick={() => clickLinkHandler("Opportunity")}>
                     Opportunity
                 </Link>
                 <Link
-                    to='/curiosity' className={currentPage === "Curiosity" ? "nav-link-selected" : "nav-link"} data-testid="curiosity"
+                    to='/curiosity' className={currentPage === "Curiosity" ? "nav-link-selected" : "nav-link"} 
+                    data-testid="curiosity"
                     onClick={() => clickLinkHandler("Curiosity")}>
                     Curiosity
                 </Link>
                 <Link to='/timeline'
-                    className={currentPage === "Timeline" ? "nav-link-selected" : "nav-link"} data-testid="timeline"
+                    className={currentPage === "Timeline" ? "nav-link-selected" : "nav-link"} 
+                    data-testid="timeline"
                     onClick={() => clickLinkHandler("Timeline")}>
                     Timeline
                 </Link>
