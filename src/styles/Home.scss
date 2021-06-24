@@ -8,6 +8,10 @@
     font-family: $fontFamily;
 }
 
+.home {
+    padding-bottom: $footerHeight;
+}
+
 #banner-img {
     width: 100%;
     img {
@@ -22,6 +26,7 @@
 
 .home-card-holder{
     width:$CardInformationWidth;
+    min-width: 600px;
     margin-left:auto;
     margin-right:auto;
 }

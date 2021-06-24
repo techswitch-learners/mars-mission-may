@@ -41,6 +41,6 @@ test("renders Rover Page - Curiosity", () => {
 
 test("renders Rover Page - redirect to Home", () => {
     render(<RoverWithRoute initialRoute={"/anything"} />);
-    const roverElement = screen.getByText("Home Page");
-    expect(roverElement).toBeInTheDocument();
+    const roverElement = screen.getAllByText("Curiosity");
+    expect(roverElement[0]).toBeInTheDocument();
 });

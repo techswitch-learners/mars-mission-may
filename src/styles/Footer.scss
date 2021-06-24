@@ -9,8 +9,7 @@
     justify-content: center;
     flex-direction: row;
     width: 100vw;
-    height: auto;
-    max-height: 3vw;
+    height: $footerHeight;
     min-height: 70px;
 
     .footer-logo-container {
