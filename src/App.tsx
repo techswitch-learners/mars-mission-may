@@ -7,7 +7,6 @@ import { Rover } from "./components/Rover";
 import { Timeline } from "./components/Timeline";
 import React from "react";
 
-
 function App() {
     return (
         <Router>

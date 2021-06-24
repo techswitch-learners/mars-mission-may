@@ -1,6 +1,6 @@
-import '../styles/Timeline.scss';
+import "../styles/Timeline.scss";
 import { timelineData } from "./timelineData";
-import { Card } from './Card';
+import { Card } from "./Card";
 
 export function Timeline() {
     return (

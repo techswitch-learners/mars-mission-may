@@ -1,10 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { MemoryRouter, Route } from "react-router-dom";
-import { Card } from '../../components/Card';
-import { Rover } from '../../components/Rover';
+import { render, screen } from "@testing-library/react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Card } from "../../components/Card";
 
-test('renders Card Title', () => {
+test("renders Card Title", () => {
     render(
         <Router>
             <Card 
@@ -15,7 +13,7 @@ test('renders Card Title', () => {
                 showInitialText={true} 
                 textHideable={false} 
                 imageOnRight={false} 
-                 />
+            />
         </Router>
     );
 
@@ -23,7 +21,7 @@ test('renders Card Title', () => {
     expect(title).toBeInTheDocument();
 });
 
-test('renders Card Body', () => {
+test("renders Card Body", () => {
     render(
         <Router>
             <Card 
@@ -34,7 +32,7 @@ test('renders Card Body', () => {
                 showInitialText={true} 
                 textHideable={false} 
                 imageOnRight={false} 
-                 />
+            />
         </Router>
     );
 
@@ -42,7 +40,7 @@ test('renders Card Body', () => {
     expect(body).toBeInTheDocument();
 });
 
-test('renders Card Image', () => {
+test("renders Card Image", () => {
     render(
         <Router>
             <Card 
@@ -53,15 +51,15 @@ test('renders Card Image', () => {
                 showInitialText={true} 
                 textHideable={false} 
                 imageOnRight={false} 
-                 />
+            />
         </Router>
     );
 
-    const image = screen.getByRole('img');
-    expect(image).toHaveAttribute('src', "https://picsum.photos/id/237/200/300");
+    const image = screen.getByRole("img");
+    expect(image).toHaveAttribute("src", "https://picsum.photos/id/237/200/300");
 });
 
-test('Check the Link exists on the card', () => {
+test("Check the Link exists on the card", () => {
     render(
         <Router>
             <Card 
@@ -72,10 +70,10 @@ test('Check the Link exists on the card', () => {
                 showInitialText={true} 
                 textHideable={false} 
                 imageOnRight={false} 
-                 />
+            />
         </Router>
     );
 
     const link = screen.getByRole("link");
-    expect(link).toHaveAttribute('href', '/spirit')
+    expect(link).toHaveAttribute("href", "/spirit");
 });

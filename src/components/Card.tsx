@@ -1,6 +1,6 @@
-import '../styles/Card.scss';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import "../styles/Card.scss";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 interface CardProps {
     imageSrc: string;
@@ -22,14 +22,14 @@ export function Card({ imageSrc, href, title, body, showInitialText, textHideabl
         }
     }
 
-    const cardContent = [<img className="card-image" src={imageSrc} onClick={toggleTextVisible} />]
+    const cardContent = [<img key={imageSrc} className="card-image" src={imageSrc} onClick={toggleTextVisible} />];
 
     if (textVisible) {
         cardContent.push(
             <div className="card-text-block">
                 <h1 className="card-title">{title}</h1>
                 <p className="card-body">{body}</p>
-            </div>)
+            </div>);
     }
 
     if (href !== "") {
@@ -37,7 +37,7 @@ export function Card({ imageSrc, href, title, body, showInitialText, textHideabl
             <Link className={`card ${imageOnRight && "card-image-right"}`} to={href}>
                 {cardContent}
             </Link>
-        )
+        );
     }
 
     return (
