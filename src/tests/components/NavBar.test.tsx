@@ -3,7 +3,7 @@ import App from '../../App';
 import { NavBar } from '../../components/NavBar';
 import userEvent from '@testing-library/user-event';
 
-test('renders navbar', () => {
+test("renders navbar", () => {
     render(<App />);
 
     const home = screen.getByTestId("home");
@@ -19,14 +19,14 @@ test('renders navbar', () => {
     expect(timeline).toBeInTheDocument();
 });
 
-test('burger button exists', () => {
+test("burger button exists", () => {
     render(<App />);
     const burgerButton = screen.getByTestId("burger-test");
 
     expect(burgerButton).toBeInTheDocument();
 });
 
-test('burger button click changes testId of bars', () => {
+test("burger button click changes testId of bars", () => {
     render(<App />);
     const burgerButton = screen.getByTestId("burger-test");
     userEvent.click(burgerButton); 
