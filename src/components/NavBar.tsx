@@ -4,13 +4,12 @@ import "../styles/NavBar.scss";
 import React from "react";
 
 export function NavBar() {
-     
     const location = useLocation();
     const removedSlash = location.pathname.slice(1);
     const pageName = removedSlash === ""
         ? "Home"
         : removedSlash.substr(0, 1).toUpperCase() + removedSlash.substr(1).toLowerCase();
-   
+
     const [closeBurger, setBurgerState] = useState(true);
     const [currentPage, setCurrentPage] = useState(pageName);
 
@@ -29,28 +28,28 @@ export function NavBar() {
                     Home
                 </Link>
                 <Link to='/spirit'
-                    className={currentPage === "Spirit" ? "nav-link-selected" : "nav-link"} 
+                    className={currentPage === "Spirit" ? "nav-link-selected" : "nav-link"}
                     data-testid="spirit"
                     onClick={() => clickLinkHandler("Spirit")}>
                     Spirit
                 </Link>
                 <Link to='/opportunity'
-                    className={currentPage === "Opportunity" ? "nav-link-selected" : "nav-link"} 
+                    className={currentPage === "Opportunity" ? "nav-link-selected" : "nav-link"}
                     data-testid="opportunity"
                     onClick={() => clickLinkHandler("Opportunity")}>
                     Opportunity
                 </Link>
                 <Link
-                    to='/curiosity' className={currentPage === "Curiosity" ? "nav-link-selected" : "nav-link"} 
+                    to='/curiosity' className={currentPage === "Curiosity" ? "nav-link-selected" : "nav-link"}
                     data-testid="curiosity"
                     onClick={() => clickLinkHandler("Curiosity")}>
                     Curiosity
                 </Link>
                 <Link to='/timeline'
-                    className={currentPage === "Timeline" ? "nav-link-selected" : "nav-link"} 
+                    className={currentPage === "Timeline" ? "nav-link-selected" : "nav-link"}
                     data-testid="timeline"
                     onClick={() => clickLinkHandler("Timeline")}>
-                    Timeline 
+                    Timeline
                 </Link>
             </div>
             <div className='current-page-mobile'>{currentPage}</div>
