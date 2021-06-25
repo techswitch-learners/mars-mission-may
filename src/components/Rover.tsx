@@ -5,7 +5,7 @@ import { Card } from "./Card";
 import { PhotoDetails, getRoverImages } from "../api/NasaApi";
 import { rovers } from "./RoverData";
 import "../styles/Home.scss";
-import React from "react";
+import "../styles/RoverPage.scss";
 
 interface RoverParams {
     rover: string;
@@ -13,6 +13,7 @@ interface RoverParams {
 }
 
 export function Rover() {
+    const [pageNumber, setPageNumber] = useState(1);
     const [allPhotoData, setAllPhotoData] = useState<PhotoDetails[]>([]);
     const [selectedPhoto, setSelectedPhoto] = useState<PhotoDetails | undefined>(undefined);
 
@@ -73,6 +74,19 @@ export function Rover() {
     return (
         <div className="home">
             {pageContent}
+            <div className="card-holder">
+                <div data-testid={rover.toLowerCase()}>{findRover(rover)}</div>
+            </div>
+            <div>Big Photo</div>
+            <div>Gallery</div>
+            <div className="page-holder">
+                {pageNumber !== 1
+                    ? <h5 className="button" onClick={() => setPageNumber(pageNumber - 1)}>Previous</h5>
+                    : <h5 className="inactive">Previous</h5>
+                }
+                <h5 className="pageNumber">Page {pageNumber}</h5>
+                <h5 className="button" onClick={() => setPageNumber(pageNumber + 1)}>Next</h5>
+            </div>
         </div>
     );
 }

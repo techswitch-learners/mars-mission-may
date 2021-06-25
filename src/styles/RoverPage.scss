@@ -1,8 +1,63 @@
 @import './constants.scss';
 
-@media(min-width: $mobileScreenSize) {
+.page-holder {
+    display: flex;
+    justify-content: space-between;
+    width:$CardInformationWidth;
+    min-width: 600px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.button {
+    padding:10px 10px 10px 10px;
+    text-align:center;
+    width: 100px;
+    height:auto;
+    background:$primaryLight;
+}
+
+.inactive{
+    padding:10px 10px 10px 10px;
+    text-align:center;
+    width: 100px;
+    height:auto;
+    background:grey;
+}
+
+.pageNumber {
+    padding:10px 10px 10px 10px;
+    text-align:center;
+    width: 100px;
+    height:auto;
+    border: 1px solid black;
+}
+
+@media(max-width: $mobileScreenSize) {
     .rover-page {
         margin-left: 7vw;
         margin-right: 10vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-holder {
+        flex-direction: column;
+        width:auto;
+        margin-left:auto;
+        margin-right:auto;
+        min-width: 0px;
+    }
+
+    .button {
+        margin:10px;
+    }
+    
+    .inactive{
+        margin:10px;
+    }
+    
+    .pageNumber {
+        margin:10px;
     }
 }
