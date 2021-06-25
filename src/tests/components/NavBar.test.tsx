@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { NavBar } from "../../components/NavBar";
 import { BrowserRouter as Router } from "react-router-dom";
-import React from "react";
 
 test("renders navbar", () => {
     render(<Router><NavBar /></Router>);
