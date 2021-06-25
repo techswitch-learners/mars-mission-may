@@ -22,7 +22,7 @@ function RoverWithRoute({ initialRoute }: RoverWithRouteProps) {
 }
 
 test("renders Rover Page - Spirit", () => {
-    render(<RoverWithRoute initialRoute={"/spirit"} />);
+    render(<RoverWithRoute initialRoute={"/SpiRit"} />);
     const roverElement = screen.getByTestId("spirit");
     expect(roverElement).toBeInTheDocument();
 });

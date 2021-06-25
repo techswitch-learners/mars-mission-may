@@ -1,4 +1,3 @@
-
 export const rovers = [
     {
         rover: "Spirit",
@@ -20,6 +19,5 @@ export const rovers = [
         status: "active",
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Curiosity_Self-Portrait_at_%27Big_Sky%27_Drilling_Site.jpg/260px-Curiosity_Self-Portrait_at_%27Big_Sky%27_Drilling_Site.jpg",
         description: "Curiosity of the Mars Science Laboratory (MSL) mission by NASA, and landed at the Aeolis Palus plain near Aeolis Mons (informally \"Mount Sharp\") in Gale Crater on August 6, 2012. The Curiosity rover is still operational as of June 2021."
-    },
-    
+    },   
 ];
