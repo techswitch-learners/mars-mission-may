@@ -9,10 +9,8 @@ interface RoverParams {
 }
 
 export function Rover() {
-    let { rover } = useParams<RoverParams>();
+    const { rover } = useParams<RoverParams>();
     const regexMatch = /(opportunity)|(spirit)|(curiosity)/i;
-
-    rover = rover.split("").map((a) => a.toLowerCase()).join("");
 
     if (!rover.match(regexMatch)) {
         return (
@@ -23,7 +21,7 @@ export function Rover() {
     return (
         <div className="home">
             <div className="card-holder">
-                <div data-testid={rover}>{findRover(rover)}</div>
+                <div data-testid={rover.toLowerCase()}>{findRover(rover)}</div>
             </div>
             <div>Big Photo</div>
             <div>Gallery</div>
