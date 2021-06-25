@@ -48,7 +48,7 @@ export function Rover() {
 
     if (selectedPhoto) {
         pageContent.push(
-            <div className="large-card-container">
+            <div className="large-card-container" data-testid="large-card-container">
                 <Card
                     imageSrc={selectedPhoto.imgSrc}
                     title={`Camera: ${selectedPhoto.camera.name}`}

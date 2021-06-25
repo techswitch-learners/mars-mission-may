@@ -11,7 +11,10 @@ interface RoverWithRouteProps {
 function RoverWithRoute({ initialRoute }: RoverWithRouteProps) {
     return (
         <MemoryRouter initialEntries={[initialRoute]}>
-            <Route path="/:rover">
+            <Route exact path="/:rover">
+                <Rover />
+            </Route> 
+            <Route exact path="/:rover/:photoIdString">
                 <Rover />
             </Route>
             <Route path="/">
@@ -24,18 +27,24 @@ function RoverWithRoute({ initialRoute }: RoverWithRouteProps) {
 test("renders Rover Page - Spirit", () => {
     render(<RoverWithRoute initialRoute={"/spirit"} />);
     const roverElement = screen.getByTestId("spirit");
+    const galleryElement = screen.getByTestId("thumbnail-gallery");
+    expect(galleryElement).toBeInTheDocument();
     expect(roverElement).toBeInTheDocument();
 });
 
 test("renders Rover Page - Opportunity", () => {
     render(<RoverWithRoute initialRoute={"/opportunity"} />);
     const roverElement = screen.getByTestId("opportunity");
+    const galleryElement = screen.getByTestId("thumbnail-gallery");
+    expect(galleryElement).toBeInTheDocument();
     expect(roverElement).toBeInTheDocument();
 });
 
 test("renders Rover Page - Curiosity", () => {
     render(<RoverWithRoute initialRoute={"/curiosity"} />);
     const roverElement = screen.getByTestId("curiosity");
+    const galleryElement = screen.getByTestId("thumbnail-gallery");
+    expect(galleryElement).toBeInTheDocument();
     expect(roverElement).toBeInTheDocument();
 });
 
@@ -43,4 +52,10 @@ test("renders Rover Page - redirect to Home", () => {
     render(<RoverWithRoute initialRoute={"/anything"} />);
     const roverElement = screen.getByText("Home Page");
     expect(roverElement).toBeInTheDocument();
+});
+
+test("renders Rover Page - Curiosity with selected image", () => {
+    render(<RoverWithRoute initialRoute={"/curiosity/102848"} />);
+    const largeCardElement = screen.getByTestId("large-card-container");
+    expect(largeCardElement).toBeInTheDocument();
 });
