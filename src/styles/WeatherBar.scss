@@ -1,0 +1,9 @@
+@import './constants.scss';
+
+.weather-banner {
+    background-color: $primaryLight;
+    margin:0%;
+    border-color: $secondaryColor;
+    border-width: 3px;
+    color: $primaryText
+}

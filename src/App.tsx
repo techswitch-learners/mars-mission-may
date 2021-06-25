@@ -5,13 +5,14 @@ import { NavBar } from "./components/NavBar";
 import { Home } from "./components/Home";
 import { Rover } from "./components/Rover";
 import { Timeline } from "./components/Timeline";
+import { WeatherBar } from "./components/WeatherBar";
 import React from "react";
 
 function App() {
     return (
         <Router>
             <NavBar />
-            <div>Replace with component for weather bar</div>
+            <WeatherBar/>
             <Switch>
                 <Route exact path="/">
                     <Home />
