@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { Rover } from "../../components/Rover";
 import { MemoryRouter, Route } from "react-router-dom";
 import { Home } from "../../components/Home";
-import React from "react";
 
 interface RoverWithRouteProps {
     initialRoute: string;

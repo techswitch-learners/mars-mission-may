@@ -1,15 +1,15 @@
-export const timelineHeaderData = {
+export const TimelineHeaderData = {
     image: "https://gumlet.assettype.com/freepressjournal%2F2020-12%2F2b868206-0252-4386-9d77-b9b92f96a72f%2Fetc_2nd_lead_dec_1.jpg?w=1200&auto=format%2Ccompress&ogImage=true",
     text: "Since our first close-up picture of Mars in 1965, spacecraft voyages to the Red Planet have revealed a world strangely familiar, yet different enough to challenge our perceptions of what makes a planet work. Every time we feel close to understanding Mars, new discoveries send us straight back to the drawing board to revise existing theories."};
 
-export const timelineData = 
+export const TimelineData = 
 [
     {
         launchDate: "To be confirmed",
         title: "NASA Mars Geyser Hopper",
         status: "Proposed",
         imageUrl: "https://www.researchgate.net/profile/Geoffrey-Landis/publication/258676254/figure/fig2/AS:909591009312768@1593874804366/Mars-Geyser-hopper-shown-as-deployed-on-Martian-surface-with-sampling-arm-extended.png",
-        description: "The Mars Geyser Hopper (MGH) is a NASA design reference mission for a Discovery-class spacecraft concept that would investigate the springtime carbon dioxide Martian geysers found in regions around the south pole of Mars."
+        description: "The Mars Geyser Hopper (MGH) is a NASA design reference mission for a Discovery-class spacecraft concept that would investigate the springtime carbon dioxide Martian geysers found in regions around the south pole of Mars.",
         mission: ""
     },
     {

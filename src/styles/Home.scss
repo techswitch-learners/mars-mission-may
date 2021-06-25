@@ -1,6 +1,6 @@
 @import "./constants.scss";
 
-.banner-image{
+.home-banner-image{
     width: $CardInformationWidth;
     min-width:600px;
     margin-left:auto;
@@ -35,8 +35,8 @@
 
 @media (max-width: 600px) {
 
-    .banner-image{
-        min-width:0px;
+    .home-banner-image{
+        min-width:425px;
         width: 100%;
         object-fit: cover;
     }
