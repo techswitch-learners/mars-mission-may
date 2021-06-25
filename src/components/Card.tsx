@@ -6,7 +6,7 @@ interface CardProps {
     imageSrc: string;
     href: string;
     title: string;
-    body: string | null | undefined;
+    body: string;
     showInitialText: boolean;
     textHideable: boolean;
     imageOnRight: boolean;

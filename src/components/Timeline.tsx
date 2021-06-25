@@ -4,7 +4,6 @@ import "../styles/Timeline.scss";
 import { Card } from "./Card";
 
 export function Timeline() {
-
     const map = TimelineData.map((post, index) => 
         <div key={index} className={index % 2 === 0 ? "information-card-holder-right" : "information-card-holder-left"}>
             <Card imageSrc={post.imageUrl}
