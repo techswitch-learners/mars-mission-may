@@ -1,5 +1,12 @@
 @import './constants.scss';
 
+.header {
+	position: sticky;
+	top: 0;
+    background-color: $primaryDark;
+    height: 7vh;
+}
+
 .nav-bar {
     background-color: $primaryDark;
     display: flex;
@@ -33,11 +40,6 @@
 
 .nav-link-selected {
     @include nav-link-mixin($primaryLight);
-}
-
-.header {
-    background-color: $primaryDark;
-    height: 7vh;
 }
 
 .current-page-mobile {
