@@ -1,0 +1,13 @@
+@import './constants.scss';
+
+.weather-banner {
+    background-color: $primaryLight;
+    margin:0%;
+    border-color: $secondaryColor;
+    border-width: 1px;
+    color: $primaryText; 
+    text-align: center;
+    font-weight: 300;
+    font-size: $subtitleFontSize;
+    border-style: solid;
+}
