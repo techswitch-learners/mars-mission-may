@@ -1,11 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import "../styles/NavBar.scss";
 import React from "react";
 
 export function NavBar() {
+
+    const location = useLocation();
+    const removedSlash = location.pathname.slice(1);
+    let pageName = removedSlash.substr(0, 1).toUpperCase() + removedSlash.substr(1).toLowerCase();
+
+    if (pageName === "") {
+        pageName = "Home";
+    }
+   
     const [closeBurger, setBurgerState] = useState(true);
-    const [currentPage, setCurrentPage] = useState("Home");
+    const [currentPage, setCurrentPage] = useState(pageName);
 
     function clickLinkHandler(currentPage: string) {
         setBurgerState(true);
@@ -43,7 +52,7 @@ export function NavBar() {
                     className={currentPage === "Timeline" ? "nav-link-selected" : "nav-link"} 
                     data-testid="timeline"
                     onClick={() => clickLinkHandler("Timeline")}>
-                    Timeline
+                    Timeline 
                 </Link>
             </div>
             <div className='current-page-mobile'>{currentPage}</div>
