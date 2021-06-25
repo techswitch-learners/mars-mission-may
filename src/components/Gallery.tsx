@@ -10,7 +10,7 @@ interface GalleryProps {
 
 export function Gallery({ rover, allPhotoData, photoId }: GalleryProps) {
     const imgList = allPhotoData.map(imageData =>
-        <Link to={`/${rover}/${imageData.id}`} key={imageData.id}>
+        <Link to={`/${rover}/${imageData.id}`} key={imageData.id} data-testid="small-photo-link">
             <div key={imageData.id} className="small-photo-container" data-testid="small-photo-container">
                 <img
                     alt={imageData.imgSrc}

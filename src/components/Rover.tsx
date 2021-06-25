@@ -22,7 +22,7 @@ export function Rover() {
 
     useEffect(() => {
         if (rover.match(regexMatch)) {
-            getRoverImages(rover).then(images => setAllPhotoData(images));
+            getRoverImages(rover.toLowerCase()).then(images => setAllPhotoData(images));
         }
     }, [rover]);
 
@@ -44,14 +44,14 @@ export function Rover() {
     const roverName = rover.substr(0, 1).toUpperCase() + rover.substr(1).toLowerCase();
 
     const pageContent = [
-        <div className="card-holder">
-                <div data-testid={rover.toLowerCase()}>{findRover(rover)}</div>
-            </div>
+        <div key="description-card" className="card-holder">
+            <div data-testid={rover.toLowerCase()}>{findRover(rover)}</div>
+        </div>
     ];
 
     if (selectedPhoto) {
         pageContent.push(
-            <div className="large-card-container" data-testid="large-card-container">
+            <div key="large-photo-card" className="card-holder" data-testid="large-photo-card">
                 <Card
                     imageSrc={selectedPhoto.imgSrc}
                     title={`Camera: ${selectedPhoto.camera.name}`}
@@ -71,7 +71,7 @@ export function Rover() {
     );
 
     return (
-        <div className="home">       
+        <div className="home">
             {pageContent}
         </div>
     );

@@ -1,6 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { Rover } from "../../components/Rover";
 import { MemoryRouter, Route } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 import { Home } from "../../components/Home";
 import React from "react";
 
@@ -54,8 +55,18 @@ test("renders Rover Page - redirect to Home", () => {
     expect(roverElement[0]).toBeInTheDocument();
 });
 
-test("renders Rover Page - Curiosity with selected image", () => {
-    render(<RoverWithRoute initialRoute={"/curiosity/102848"} />);
-    const largeCardElement = screen.getByTestId("large-card-container");
-    expect(largeCardElement).toBeInTheDocument();
+test("renders Rover Page - Curiosity with large photo card when image selected", async () => {
+    render(<RoverWithRoute initialRoute={"/curiosity"} />);
+
+    await waitFor(() => {
+        expect(screen.getAllByTestId("small-photo-link")[0]).toBeInTheDocument()
+    })
+    const smallPhotoElements = screen.getAllByTestId("small-photo-link");
+    const smallPhotoElement = smallPhotoElements[0];
+
+    userEvent.click(smallPhotoElement);
+
+    await waitFor(() => {
+        expect(screen.getByTestId("large-photo-card")).toBeInTheDocument()
+    })
 });
