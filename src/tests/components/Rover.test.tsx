@@ -59,14 +59,14 @@ test("renders Rover Page - Curiosity with large photo card when image selected",
     render(<RoverWithRoute initialRoute={"/curiosity"} />);
 
     await waitFor(() => {
-        expect(screen.getAllByTestId("small-photo-link")[0]).toBeInTheDocument()
-    })
+        expect(screen.getAllByTestId("small-photo-link")[0]).toBeInTheDocument();
+    });
     const smallPhotoElements = screen.getAllByTestId("small-photo-link");
     const smallPhotoElement = smallPhotoElements[0];
 
     userEvent.click(smallPhotoElement);
 
     await waitFor(() => {
-        expect(screen.getByTestId("large-photo-card")).toBeInTheDocument()
-    })
+        expect(screen.getByTestId("large-photo-card")).toBeInTheDocument();
+    });
 });

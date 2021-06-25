@@ -1,8 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Rover } from "../../components/Rover";
-import { Gallery } from "../../components/Gallery";
 import { MemoryRouter, Route } from "react-router-dom";
-import userEvent from "@testing-library/user-event";
 import { Home } from "../../components/Home";
 import React from "react";
 
