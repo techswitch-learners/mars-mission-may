@@ -1,2 +1,2 @@
 export const NASA_BASE_URL = 'https://api.nasa.gov/';
-export const NASA_API_KEY = 'Y2rRAiQ9K3xehNfQHvT1ZrSwSOA3yosT69O0gduz';
+export const NASA_API_KEY = 'IVHOgBl45Bc66c0ZyysyAkGemZaYSjtGWbRt3aTp';
