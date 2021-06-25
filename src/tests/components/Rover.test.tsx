@@ -34,7 +34,7 @@ test("renders Rover Page - Opportunity", () => {
 });
 
 test("renders Rover Page - Curiosity", () => {
-    render(<RoverWithRoute initialRoute={"/curiosity"} />);
+    render(<RoverWithRoute initialRoute={"/CURIOSITY"} />);
     const roverElement = screen.getByTestId("curiosity");
     expect(roverElement).toBeInTheDocument();
 });
