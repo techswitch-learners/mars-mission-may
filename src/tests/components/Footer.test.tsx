@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import { Footer } from "../../components/Footer";
-import React from "react";
 
 test("renders NASA logo in footer", () => {
     render(<Footer />);

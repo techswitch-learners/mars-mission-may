@@ -1,16 +1,39 @@
+import { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
+import { Gallery } from "./Gallery";
 import { Card } from "./Card";
+import { PhotoDetails, getRoverImages } from "../api/NasaApi";
 import { rovers } from "./RoverData";
 import "../styles/Home.scss";
 import React from "react";
 
 interface RoverParams {
     rover: string;
+    photoIdString: string;
 }
 
 export function Rover() {
-    const { rover } = useParams<RoverParams>();
+    const [allPhotoData, setAllPhotoData] = useState<PhotoDetails[]>([]);
+    const [selectedPhoto, setSelectedPhoto] = useState<PhotoDetails | undefined>(undefined);
+
+    const { rover, photoIdString } = useParams<RoverParams>();
     const regexMatch = /(opportunity)|(spirit)|(curiosity)/i;
+    const photoId = parseInt(photoIdString);
+
+    useEffect(() => {
+        if (rover.match(regexMatch)) {
+            getRoverImages(rover.toLowerCase()).then(images => setAllPhotoData(images));
+        }
+    }, [rover]);
+
+    useEffect(() => {
+        const foundPhoto = allPhotoData.find(
+            photoData => photoData.id === photoId
+        );
+        if (foundPhoto) {
+            setSelectedPhoto(foundPhoto);
+        }
+    }, [photoIdString, allPhotoData]);
 
     if (!rover.match(regexMatch)) {
         return (
@@ -18,13 +41,38 @@ export function Rover() {
         );
     }
 
+    const roverName = rover.substr(0, 1).toUpperCase() + rover.substr(1).toLowerCase();
+
+    const pageContent = [
+        <div key="description-card" className="card-holder">
+            <div data-testid={rover.toLowerCase()}>{findRover(rover)}</div>
+        </div>
+    ];
+
+    if (selectedPhoto) {
+        pageContent.push(
+            <div key="large-photo-card" className="card-holder" data-testid="large-photo-card">
+                <Card
+                    imageSrc={selectedPhoto.imgSrc}
+                    title={`Camera: ${selectedPhoto.camera.name}`}
+                    body={`Date taken: ${selectedPhoto.earthDate}`}
+                    href=""
+                    showInitialText={true}
+                    textHideable={false}
+                    imageOnRight={false} />
+            </div>);
+    }
+
+    pageContent.push(
+        <Gallery
+            rover={roverName}
+            allPhotoData={allPhotoData}
+            photoId={photoId} />
+    );
+
     return (
         <div className="home">
-            <div className="card-holder">
-                <div data-testid={rover.toLowerCase()}>{findRover(rover)}</div>
-            </div>
-            <div>Big Photo</div>
-            <div>Gallery</div>
+            {pageContent}
         </div>
     );
 }

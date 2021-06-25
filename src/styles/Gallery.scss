@@ -1,0 +1,56 @@
+@import './constants.scss';
+
+.thumbnail-gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .small-photo-container {
+        display: flex;
+        align-items: center;
+        width: 16vw;
+        height: auto;
+        margin: 1vw;
+
+        .small-photo {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+        }
+        
+        .small-photo-selected {
+            border: 0.5vw solid $primaryLight;
+            width: 92%;
+            height: auto;
+            max-height: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .thumbnail-gallery {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    
+        .small-photo-container {
+            width: 90vw;
+            height: auto;
+            margin: 1vw;
+    
+            .small-photo {
+                width: 100%;
+                height: auto;
+                max-height: 100%;
+            }
+            
+            .small-photo-selected {
+                border: 1vw solid $primaryLight;
+                width: 88vw;
+                height: auto;
+                max-height: 100%;
+            }
+        }
+    }
+}
+

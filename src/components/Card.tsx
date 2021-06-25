@@ -34,14 +34,14 @@ export function Card({ imageSrc, href, title, body, showInitialText, textHideabl
 
     if (href !== "") {
         return (
-            <Link className={`card ${imageOnRight && "card-image-right"}`} to={href}>
+            <Link key={imageSrc} className={`card ${imageOnRight ? "card-image-right" : ""}`} to={href}>
                 {cardContent}
             </Link>
         );
     }
 
     return (
-        <div className={`card ${imageOnRight && "card-image-right"}`}>
+        <div key={imageSrc} className={`card ${imageOnRight ? "card-image-right" : ""}`}>
             {cardContent}
         </div>
     );
