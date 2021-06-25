@@ -4,11 +4,8 @@ import { WeatherBar } from "../../components/WeatherBar";
 import { BrowserRouter as Router } from "react-router-dom";
 
 test("renders weather bar", () => {
-    render(
-        <Router>
-            <WeatherBar />
-        </Router>
-    );
+    render( <WeatherBar />);
     const weatherBarElement = screen.getByTestId("weather-banner");
+    
     expect(weatherBarElement).toBeInTheDocument();
 });
