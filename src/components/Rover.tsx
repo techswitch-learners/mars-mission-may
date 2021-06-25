@@ -1,4 +1,7 @@
 import { useParams, Redirect } from "react-router-dom";
+import { Card } from "./Card";
+import { rovers } from "./RoverData";
+import "../styles/Home.scss";
 import React from "react";
 
 interface RoverParams {
@@ -6,20 +9,36 @@ interface RoverParams {
 }
 
 export function Rover() {
-    let { rover } = useParams<RoverParams>();
+    const { rover } = useParams<RoverParams>();
     const regexMatch = /(opportunity)|(spirit)|(curiosity)/i;
 
-    if(!rover.match(regexMatch)){
+    if (!rover.match(regexMatch)) {
         return (
             <Redirect to="/" />
         );
     }
 
-    rover = rover.substr(0, 1).toUpperCase() + rover.substr(1).toLowerCase();
-
     return (
-        <div>
-            <h2 className='current-page'>Hello {rover}</h2>
+        <div className="home">
+            <div className="card-holder">
+                <div data-testid={rover.toLowerCase()}>{findRover(rover)}</div>
+            </div>
+            <div>Big Photo</div>
+            <div>Gallery</div>
         </div>
     );
+}
+
+function findRover(rover: string) {
+    let data;
+
+    if (rover.match(/spirit/i)) {
+        data = rovers[0];
+    } else if (rover.match(/opportunity/i)) {
+        data = rovers[1];
+    } else {
+        data = rovers[2];
+    }
+
+    return <Card imageSrc={data.imageUrl} href="" title={data.rover} body={data.description} showInitialText={true} textHideable={true} imageOnRight={true} />;
 }

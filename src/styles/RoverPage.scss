@@ -1,0 +1,8 @@
+@import './constants.scss';
+
+@media(min-width: $mobileScreenSize) {
+    .rover-page {
+        margin-left: 7vw;
+        margin-right: 10vw;
+    }
+}

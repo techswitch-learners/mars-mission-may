@@ -16,6 +16,9 @@ $bodyFontSize: 16px;
 $mobileTitleFontSize: 24px;
 $mobileSubtitleFontSize: 20px;
 $mobileBodyFontSize: 14px;
+$smallMobileTitleFontSize: 18px;
+$smallMobileSubtitleFontSize: 14px;
+$smallMobileBodyFontSize: 10px;
 
 $bodyWidth: 1024px;
 $activeImageBorder: 10px solid $primaryColor;
@@ -42,3 +45,5 @@ $footerHeight: 6vh;
 $cardImageDimensionDesktop:300px;
 $cardImageDimensionMobile:425px;
 $cardMargin:20px;
+$cardImageDimensionSmallMobile:320px;
+$smallMobileCardPadding:10px;
