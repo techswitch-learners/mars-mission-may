@@ -1,4 +1,4 @@
-import { TimelineData, TimelineHeaderData } from "./TimelineData1";
+import { TimelineData, TimelineHeaderData } from "./TimelineData";
 import "../styles/constants.scss";
 import "../styles/Timeline.scss";
 import { Card } from "./Card";

@@ -1,6 +1,6 @@
 import "../styles/Home.scss";
 import { Card } from "./Card";
-import { TimelineData } from "./TimelineData1";
+import { TimelineData } from "./TimelineData";
 
 export function Home() {
     return (
