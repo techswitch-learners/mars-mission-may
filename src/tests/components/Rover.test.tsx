@@ -23,19 +23,19 @@ function RoverWithRoute({ initialRoute }: RoverWithRouteProps) {
 
 test("renders Rover Page - Spirit", () => {
     render(<RoverWithRoute initialRoute={"/SpiRit"} />);
-    const roverElement = screen.getByText("Hello Spirit");
+    const roverElement = screen.getByTestId("spirit");
     expect(roverElement).toBeInTheDocument();
 });
 
 test("renders Rover Page - Opportunity", () => {
     render(<RoverWithRoute initialRoute={"/opportunity"} />);
-    const roverElement = screen.getByText("Hello Opportunity");
+    const roverElement = screen.getByTestId("opportunity");
     expect(roverElement).toBeInTheDocument();
 });
 
 test("renders Rover Page - Curiosity", () => {
     render(<RoverWithRoute initialRoute={"/CURIOSITY"} />);
-    const roverElement = screen.getByText("Hello Curiosity");
+    const roverElement = screen.getByTestId("curiosity");
     expect(roverElement).toBeInTheDocument();
 });
 
