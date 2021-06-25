@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/NavBar.scss";
 import React from "react";
 
@@ -17,6 +17,10 @@ export function NavBar() {
         setBurgerState(true);
         setCurrentPage(currentPage);
     }
+
+    useEffect(() => {
+        setCurrentPage(pageName);
+    }, [location]);
 
     return (
         <div className='header'>
