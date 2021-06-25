@@ -4,14 +4,12 @@ import "../styles/NavBar.scss";
 import React from "react";
 
 export function NavBar() {
-
+     
     const location = useLocation();
     const removedSlash = location.pathname.slice(1);
-    let pageName = removedSlash.substr(0, 1).toUpperCase() + removedSlash.substr(1).toLowerCase();
-
-    if (pageName === "") {
-        pageName = "Home";
-    }
+    const pageName = removedSlash === ""
+        ? "Home"
+        : removedSlash.substr(0, 1).toUpperCase() + removedSlash.substr(1).toLowerCase();
    
     const [closeBurger, setBurgerState] = useState(true);
     const [currentPage, setCurrentPage] = useState(pageName);
