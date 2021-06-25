@@ -1,4 +1,4 @@
-import { useState, useEffect, React } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import { Gallery } from "./Gallery";
 import { Card } from "./Card";
@@ -43,7 +43,7 @@ export function Rover() {
     const roverName = rover.substr(0, 1).toUpperCase() + rover.substr(1).toLowerCase();
 
     const pageContent = [
-        <div data-testid={rover}>{findRover(rover)}</div>
+        <div key={rover} data-testid={rover}>{findRover(rover)}</div>
     ];
 
     if (selectedPhoto) {
@@ -51,8 +51,8 @@ export function Rover() {
             <div className="large-card-container">
                 <Card
                     imageSrc={selectedPhoto.imgSrc}
-                    title="First Title"
-                    body="body-text-body-text-body-text-body-text-body-text-body-text-body-text-"
+                    title={`Camera: ${selectedPhoto.camera.name}`}
+                    body={`Date taken: ${selectedPhoto.earthDate}`}
                     href=""
                     showInitialText={true}
                     textHideable={false}
@@ -68,7 +68,7 @@ export function Rover() {
     );
 
     return (
-        <div className = "rover-page">
+        <div className="rover-page">
             {pageContent}
         </div>
     );
