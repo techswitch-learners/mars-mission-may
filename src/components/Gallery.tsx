@@ -1,25 +1,24 @@
 import { PhotoDetails } from "../api/NasaApi";
-import { Dispatch, SetStateAction } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Gallery.scss";
 
 interface GalleryProps {
+    rover: string;
     allPhotoData: PhotoDetails[];
-    photoSelectedId: number;
-    setPhotoSelectedId: Dispatch<SetStateAction<number>>;
+    photoId: number;
 }
 
-export function Gallery({ allPhotoData, photoSelectedId, setPhotoSelectedId }: GalleryProps) {
+export function Gallery({ rover, allPhotoData, photoId }: GalleryProps) {
     const imgList = allPhotoData.map(imageData =>
-        // <Link to={`/${photoId}`} key={photoId}>
-        <div key={imageData.id} className="small-photo-container" data-testid="small-photo-container">
-            <img
-                alt={imageData.imgSrc}
-                className={imageData.id === photoSelectedId ? "small-photo-selected" : "small-photo"}
-                onClick={() => imageData.id === photoSelectedId ? setPhotoSelectedId(0) : setPhotoSelectedId(imageData.id)}
-                src={imageData.imgSrc}
-            />
-        </div>
-        // </Link>
+        <Link to={`/${rover}/${imageData.id}`} key={imageData.id}>
+            <div key={imageData.id} className="small-photo-container" data-testid="small-photo-container">
+                <img
+                    alt={imageData.imgSrc}
+                    className={imageData.id === photoId ? "small-photo-selected" : "small-photo"}
+                    src={imageData.imgSrc}
+                />
+            </div>
+        </Link>
     );
 
     return (

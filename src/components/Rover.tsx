@@ -3,18 +3,19 @@ import { useParams, Redirect } from "react-router-dom";
 import { Gallery } from "./Gallery";
 import { Card } from "./Card";
 import { PhotoDetails, getRoverImages } from "../api/NasaApi";
-import camelcaseKeys from "camelcase-keys";
 
 interface RoverParams {
     rover: string;
+    photoIdString: string;
 }
 
 export function Rover() {
-    let { rover } = useParams<RoverParams>();
-    const regexMatch = /(opportunity)|(spirit)|(curiosity)/i;
-
-    const [photoSelectedId, setPhotoSelectedId] = useState<number>(0);
     const [allPhotoData, setAllPhotoData] = useState<PhotoDetails[]>([]);
+    const [selectedPhoto, setSelectedPhoto] = useState<PhotoDetails | undefined>(undefined);
+
+    const { rover, photoIdString } = useParams<RoverParams>();
+    const regexMatch = /(opportunity)|(spirit)|(curiosity)/i;
+    const photoId = parseInt(photoIdString);
 
     useEffect(() => {
         if (rover.match(regexMatch)) {
@@ -22,14 +23,14 @@ export function Rover() {
         }
     }, [rover]);
 
-    let photoSelectedData = getFirstSelectedPhoto();
     useEffect(() => {
-        // if (photoSelectedId !== 0) {
-        photoSelectedData = allPhotoData.find(
-            photoData => photoData.id === photoSelectedId
+        const foundPhoto = allPhotoData.find(
+            photoData => photoData.id === photoId
         );
-        // }
-    }, [photoSelectedId]);
+        if (foundPhoto) {
+            setSelectedPhoto(foundPhoto);
+        }
+    }, [photoIdString, allPhotoData]);
 
     if (!rover.match(regexMatch)) {
         return (
@@ -37,62 +38,36 @@ export function Rover() {
         );
     }
 
-    rover = rover.substr(0, 1).toUpperCase() + rover.substr(1).toLowerCase();
+    const roverName = rover.substr(0, 1).toUpperCase() + rover.substr(1).toLowerCase();
 
     const pageContent = [
-        <h2 key={rover} className='current-page'>Hello {rover}</h2>,
         <div key={rover}> Rover description card </div>
     ];
 
-    if (photoSelectedData !== undefined) {
+    if (selectedPhoto) {
         pageContent.push(
-            <div>
+            <div className="large-card-container">
                 <Card
-                    imageSrc={photoSelectedData.imgSrc}
+                    imageSrc={selectedPhoto.imgSrc}
                     title="First Title"
                     body="body-text-body-text-body-text-body-text-body-text-body-text-body-text-"
                     href=""
                     showInitialText={true}
                     textHideable={false}
                     imageOnRight={false} />
-            </div>
-        );
+            </div>);
     }
 
     pageContent.push(
         <Gallery
+            rover={roverName}
             allPhotoData={allPhotoData}
-            photoSelectedId={photoSelectedId}
-            setPhotoSelectedId={setPhotoSelectedId} />
+            photoId={photoId} />
     );
 
     return (
-        <div>
+        <div className="rover-page">
             {pageContent}
         </div>
-    );
-}
-
-function getFirstSelectedPhoto(): PhotoDetails {
-    return camelcaseKeys(
-        {
-            "id": 409062,
-            "sol": 1001,
-            "camera": {
-                "id": 26,
-                "name": "NAVCAM",
-                "rover_id": 5,
-                "full_name": "Navigation Camera"
-            },
-            "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01001/opgs/edr/ncam/NRB_486372228EDR_M0481570NCAM00543M_.JPG",
-            "earth_date": "2015-05-31",
-            "rover": {
-                "id": 5,
-                "name": "Curiosity",
-                "landing_date": "2012-08-06",
-                "launch_date": "2011-11-26",
-                "status": "active"
-            }
-        }
     );
 }
