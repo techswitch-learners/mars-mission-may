@@ -4,7 +4,8 @@ import { Gallery } from "./Gallery";
 import { Card } from "./Card";
 import { PhotoDetails, getRoverImages } from "../api/NasaApi";
 import { rovers } from "./RoverData";
-import "../styles/RoverPage.scss";
+import "../styles/Home.scss";
+import React from "react";
 
 interface RoverParams {
     rover: string;
@@ -43,7 +44,9 @@ export function Rover() {
     const roverName = rover.substr(0, 1).toUpperCase() + rover.substr(1).toLowerCase();
 
     const pageContent = [
-        <div key={rover} data-testid={rover}>{findRover(rover)}</div>
+        <div className="card-holder">
+                <div data-testid={rover.toLowerCase()}>{findRover(rover)}</div>
+            </div>
     ];
 
     if (selectedPhoto) {
@@ -68,7 +71,7 @@ export function Rover() {
     );
 
     return (
-        <div className="rover-page">
+        <div className="home">       
             {pageContent}
         </div>
     );
@@ -76,21 +79,14 @@ export function Rover() {
 
 function findRover(rover: string) {
     let data;
-    switch (rover) {
-    case "spirit":
+
+    if (rover.match(/spirit/i)) {
         data = rovers[0];
-        break;
-    case "opportunity":
+    } else if (rover.match(/opportunity/i)) {
         data = rovers[1];
-        break;
-    case "curiosity":
+    } else {
         data = rovers[2];
-        break;
     }
 
-    if (data) {
-        return <Card imageSrc={data.imageUrl} href="" title={data.rover} body={data.description} showInitialText={true} textHideable={true} imageOnRight={true} />;
-    }
-
-    return <h1>waiting</h1>;
+    return <Card imageSrc={data.imageUrl} href="" title={data.rover} body={data.description} showInitialText={true} textHideable={true} imageOnRight={true} />;
 }

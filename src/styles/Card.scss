@@ -1,9 +1,5 @@
 @import './constants.scss';
 
-$cardImageDimensionDesktop:300px;
-$cardImageDimensionMobile:425px;
-$cardMargin:20px;
-
 .card {
     margin:$cardMargin;
     width:100%;
@@ -13,7 +9,6 @@ $cardMargin:20px;
     background-color: $secondaryLight;
     width:100%;
     display: flex;
-    padding:10px;
     text-decoration: none;
 }
 
@@ -26,6 +21,7 @@ $cardMargin:20px;
     height: $cardImageDimensionDesktop;
     width: $cardImageDimensionDesktop;
     float:right;
+    border: 10px solid $secondaryLight;
 }
 
 .card-text-block{
@@ -53,9 +49,8 @@ $cardMargin:20px;
     padding-bottom: 15px;
 }
 
-@media (max-width: $mobileScreenSize) {
+@media (max-width: 600px) {
     .card {
-        width:100vw;
         box-shadow: 0px 0px;
         margin-left: auto;
         margin-right: auto;
@@ -69,5 +64,41 @@ $cardMargin:20px;
         width: $cardImageDimensionMobile - 2*$mobileCardPadding;
         margin: $mobileCardPadding;
         margin-bottom:0px;
+        border: 0px;
+    }
+
+    .card-title {
+        font-size: $mobileTitleFontSize;
+    }
+    
+    .card-body {
+        font-size: $mobileBodyFontSize;
+    }
+}
+
+@media (max-width: 475px) {
+    .card {
+        box-shadow: 0px 0px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%; 
+        flex-direction: column;
+        padding:0px;
+    }
+
+    .card-image {
+        height: $cardImageDimensionSmallMobile - 2*$smallMobileCardPadding;
+        width: $cardImageDimensionSmallMobile - 2*$smallMobileCardPadding;
+        margin: $smallMobileCardPadding;
+        margin-bottom:0px;
+        border: 0px;
+    }
+    
+    .card-title {
+        font-size: $smallMobileTitleFontSize;
+    }
+    
+    .card-body {
+        font-size: $smallMobileBodyFontSize;
     }
 }

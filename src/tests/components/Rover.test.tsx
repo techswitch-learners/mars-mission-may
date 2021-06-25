@@ -25,7 +25,7 @@ function RoverWithRoute({ initialRoute }: RoverWithRouteProps) {
 }
 
 test("renders Rover Page - Spirit", () => {
-    render(<RoverWithRoute initialRoute={"/spirit"} />);
+    render(<RoverWithRoute initialRoute={"/SpiRit"} />);
     const roverElement = screen.getByTestId("spirit");
     const galleryElement = screen.getByTestId("thumbnail-gallery");
     expect(galleryElement).toBeInTheDocument();
@@ -41,7 +41,7 @@ test("renders Rover Page - Opportunity", () => {
 });
 
 test("renders Rover Page - Curiosity", () => {
-    render(<RoverWithRoute initialRoute={"/curiosity"} />);
+    render(<RoverWithRoute initialRoute={"/CURIOSITY"} />);
     const roverElement = screen.getByTestId("curiosity");
     const galleryElement = screen.getByTestId("thumbnail-gallery");
     expect(galleryElement).toBeInTheDocument();
@@ -50,8 +50,8 @@ test("renders Rover Page - Curiosity", () => {
 
 test("renders Rover Page - redirect to Home", () => {
     render(<RoverWithRoute initialRoute={"/anything"} />);
-    const roverElement = screen.getByText("Home Page");
-    expect(roverElement).toBeInTheDocument();
+    const roverElement = screen.getAllByText("Curiosity");
+    expect(roverElement[0]).toBeInTheDocument();
 });
 
 test("renders Rover Page - Curiosity with selected image", () => {

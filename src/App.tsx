@@ -19,7 +19,7 @@ function App() {
                 <Route exact path="/timeline">
                     <Timeline />
                 </Route>
-                <Route exact path="/:rover">
+                <Route exact path="/:rover"> 
                     <Rover />
                 </Route>
                 <Route exact path="/:rover/:photoIdString">
